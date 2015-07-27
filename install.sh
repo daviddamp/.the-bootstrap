@@ -14,32 +14,32 @@ mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf ~/.config/
 # Vim
 sudo apt-get install vim
 mkdir ~/.vim
-ln -s $0/etc/vim/ftplugin ~/.vim/
-#ln -s $0/etc/vim/ftdetect ~/.vim/
-ln -s $0/etc/vim/UltiSnips ~/.vim/
+ln -s $(pwd)/etc/vim/ftplugin ~/.vim/
+#ln -s $(pwd)/etc/vim/ftdetect ~/.vim/
+ln -s $(pwd)/etc/vim/UltiSnips ~/.vim/
 
-ln -s $0/etc/vim/vimrc ~/.vimrc
-ln -s $0/etc/vim/vimrc.local ~/.vimrc.local
-ln -s $0/etc/vim/vimrc.local.bundles ~/.vimrc.local.bundles
+ln -s $(pwd)/etc/vim/vimrc ~/.vimrc
+ln -s $(pwd)/etc/vim/vimrc.local ~/.vimrc.local
+ln -s $(pwd)/etc/vim/vimrc.local.bundles ~/.vimrc.local.bundles
 
 # Nvim
-sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt-get update
 sudo apt-get install neovim
 sudo pip install neovim
-ln -s $0/etc/vim/vimrc ~/.nvimrc
-ln -s $0/etc/vim/vimrc.local ~/.nvimrc.local
-ln -s $0/etc/vim/vimrc.local.bundles ~/.nvimrc.local.bundles
+ln -s $(pwd)/etc/vim/vimrc ~/.nvimrc
+ln -s $(pwd)/etc/vim/vimrc.local ~/.nvimrc.local
+ln -s $(pwd)/etc/vim/vimrc.local.bundles ~/.nvimrc.local.bundles
 ln -s ~/.vim ~/.nvim
 
 # Bashrc
-if ! grep --quit 'By the-bootstrap:' ~/.bashrc ; then
+if ! grep --quiet 'By the-bootstrap:' ~/.bashrc ; then
 	cat >> ~/.bashrc << EOF
 
 # By the-bootstrap:
-source $0/etc/bashrc
+source $(pwd)/etc/bashrc
 EOF
 fi
 
-ln -s $0/etc/xbindkeysrc ~/.xbindkeysrc
+ln -s $(pwd)/etc/xbindkeysrc ~/.xbindkeysrc
 xbindkeys
