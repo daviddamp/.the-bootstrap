@@ -1,0 +1,193 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Theme
+colorscheme kalisi
+
+"colorscheme solarized
+"let g:solarized_termcolors=256
+
+set background=dark
+
+let g:airline#extensions#tabline#enabled = 0
+let g:airline_powerline_fonts = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Session and configuration
+"set sessionoptions+=buffers,curdir,folds,tabpages
+set sessionoptions-=blank,help
+
+" Reload vim configuration
+nnoremap <Leader>v :source $MYVIMRC<CR>
+
+" Disable F1 key
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" Wild menu
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildmenu
+set wildmode=list:longest,full
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Cursor, line numbers and navigation
+set cursorline                           " Highlight cursor line
+set relativenumber                       " Relative line numbers
+
+" Remove line numbers
+nmap <leader>n :set number!<CR>
+" Center line
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+
+" Move tabs
+nnoremap <silent> <A-PageUp> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+" Move tabs
+nnoremap <silent> <A-PageDown> :execute 'silent! tabmove ' . tabpagenr()<CR>
+" Create tab
+nmap <C-t> :tabnew<CR>
+" Create tab
+imap <C-t> <Esc>:tabnew<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search and visualization
+set showmatch
+set hlsearch                            " Highligh search result
+set incsearch                           " Incremental search
+set ignorecase                          " Ignore case
+set smartcase                           " Smartcase
+" Clear search highlight
+nmap <leader>s :nohlsearch<CR>
+
+" Show special characters
+"set list
+nmap <leader>c :set list!<CR>
+set listchars=tab:▸.,trail:.,extends:…,nbsp:.,eol:¬
+"highlight NonText ctermfg=8 ctermbg=0          " Invisible character colors
+"highlight SpecialKey ctermfg=8 ctermbg=0
+match ErrorMsg /\s\+$/                  " Highlight spaces at the end of the line
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Edition
+" Repeat last action and move to the beginning of the edition
+map . .`[
+
+" Disable vim-boostrap mapping
+unmap P
+
+" Run macro 'q'
+nnoremap QQ @q
+
+" Switch paste mode
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
+" Insert at the beginning of previous line
+nnoremap gi kI
+" Insert in a lonely line before or after the current line
+nnoremap gO O<ESC>O<ESC>o
+nnoremap go o<ESC>o<ESC>O
+" Swap words
+nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+" Append line after next line
+nnoremap gl ddpkJ
+" Cut line and paste before this line
+nnoremap gL DO<ESC>p0d^==
+
+" Move lines and visual selections up and down
+nnoremap <C-Down> :m+<CR>==
+nnoremap <C-Up> :m-2<CR>==
+inoremap <C-Down> <Esc>:m+<CR>==gi
+inoremap <C-Up> <Esc>:m-2<CR>==gi
+vnoremap <C-Down> :m'>+<CR>gv=gv
+vnoremap <C-Up> :m-2<CR>gv=gv
+
+" Change case of whole word
+nnoremap <leader>u guiw
+nnoremap <leader>U gUiw
+
+" Remove spaces at the end of the line
+nnoremap <leader>S :%s/[ \t]\+$//g<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Spell checker
+set spelllang=es,en_us
+set spellsuggest=10
+" Start spell checker
+map <C-F5> :setlocal spell<CR>
+" Show suggestions
+map <M-F5> z=
+" Show suggestions
+imap <M-F5> <ESC>z=
+
+nmap <c-s> :setlocal spell spelllang=es<cr>
+nmap <c-g> :setlocal spell spelllang=en_us<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Abbreviations
+iabbr fi if
+iabbr teh the
+iabbr Teh The
+iabbr pritn print
+iabbr urrlib urllib
+iabbr urrlib2 urllib2
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Close hidden buffers
+function! CloseHiddenBuffers()
+	" figure out which buffers are visible in any tab
+	let visible = {}
+	for t in range(1, tabpagenr('$'))
+		for b in tabpagebuflist(t)
+			let visible[b] = 1
+		endfor
+	endfor
+	" close any buffer that's loaded and not visible
+	for b in range(1, bufnr('$'))
+		if bufloaded(b) && !has_key(visible, b)
+			exe 'bd ' . b
+		endif
+	endfor
+endfun
+nnoremap <Leader>C :call CloseHiddenBuffers()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Swicth mouse on/off
+function! ToggleMouse()
+	if &mouse == 'a'
+		set mouse=
+		echo "Mouse usage disabled"
+	else
+		set mouse=a
+		echo "Mouse usage enabled"
+	endif
+endfunction
+nnoremap <Leader>m :call ToggleMouse()<CR>
+set mouse=a                             " Mouse activate
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Chage to UPPER CASE, lower case and Tittle Case (http://vim.wikia.com/wiki/Switching_case_of_characters)
+function! TwiddleCase(str)
+	if a:str ==# toupper(a:str)
+		let result = tolower(a:str)
+	elseif a:str ==# tolower(a:str)
+		let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
+	else
+		let result = toupper(a:str)
+	endif
+	return result
+endfunction
+vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree and NERDTreeTabs
+let NERDTreeIgnore = ['\.pyc$']
+
+map <Leader>f <plug>NERDTreeTabsToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vimwiki
+"let g:vimwiki_camel_case=0
+""let g:vimwiki_list=[{'path': '~/Dropbox/vimwiki', 'path_html': '~/Dropbox/vimwiki/html', 'html_header': '~/Dropbox/vimwiki/template/header.tpl',}]
+"let g:vimwiki_list=[{'path': '~/Privado/vimwiki/private', 'path_html': '~/Privado/vimwiki/private/html'},
+"					\{'path': '~/Dropbox/vimwiki/public', 'path_html': '~/Dropbox/Public/wiki/html'}]
+"let g:vimwiki_browsers=['/usr/bin/google-chrome']

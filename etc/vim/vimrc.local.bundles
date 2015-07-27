@@ -1,0 +1,8 @@
+NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle 'jeffkreeftmeijer/vim-numbertoggle'
+"NeoBundle 'vimwiki/vimwiki'
+
+"NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+"NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'freeo/vim-kalisi'
