@@ -15,6 +15,8 @@ mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf ~/.config/
 sudo apt-get install vim
 mkdir ~/.vim
 ln -s $0/etc/vim/ftplugin ~/.vim/
+#ln -s $0/etc/vim/ftdetect ~/.vim/
+ln -s $0/etc/vim/UltiSnips ~/.vim/
 
 ln -s $0/etc/vim/vimrc ~/.vimrc
 ln -s $0/etc/vim/vimrc.local ~/.vimrc.local

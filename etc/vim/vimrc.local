@@ -15,13 +15,21 @@ let g:airline_powerline_fonts = 1
 "set sessionoptions+=buffers,curdir,folds,tabpages
 set sessionoptions-=blank,help
 
+" No redraw all the time
+set lazyredraw
+
 " Reload vim configuration
 nnoremap <Leader>v :source $MYVIMRC<CR>
 
+" Shell
+set shell=/bin/bash
+
 " Disable F1 key
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
+inoremap <F1> <Nop>
+nnoremap <F1> <Nop>
+vnoremap <F1> <Nop>
+
+unmap <TAB>
 
 " Wild menu
 set wildignore=*.swp,*.bak,*.pyc,*.class
@@ -31,12 +39,30 @@ set wildmode=list:longest,full
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Cursor, line numbers and navigation
 set cursorline                           " Highlight cursor line
-set relativenumber                       " Relative line numbers
+" Switch cursor line
+nmap <leader>l :set cursorline!<CR>
+" Always see next 3 lines
+set scrolloff=3
 
+set relativenumber                       " Relative line numbers
 " Remove line numbers
 nmap <leader>n :set number!<CR>
+" Switch relative line numbers
+nmap <leader>r :set relativenumber!<CR>
+
 " Center line
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+
+if has('nvim')
+	tnoremap <A-Left> <C-\><C-n><C-w>h
+	tnoremap <A-Down> <C-\><C-n><C-w>j
+	tnoremap <A-Up> <C-\><C-n><C-w>k
+	tnoremap <A-Right> <C-\><C-n><C-w>l
+endif
+nnoremap <A-Left> <C-w>h
+nnoremap <A-Down> <C-w>j
+nnoremap <A-Up> <C-w>k
+nnoremap <A-Right> <C-w>l
 
 " Move tabs
 nnoremap <silent> <A-PageUp> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
@@ -130,6 +156,8 @@ iabbr Teh The
 iabbr pritn print
 iabbr urrlib urllib
 iabbr urrlib2 urllib2
+
+iabbr ^2 ²
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Close hidden buffers

@@ -6,3 +6,5 @@ NeoBundle 'jeffkreeftmeijer/vim-numbertoggle'
 
 "NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'freeo/vim-kalisi'
+
+NeoBundle 'Glench/Vim-Jinja2-Syntax'
