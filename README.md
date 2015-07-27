@@ -1,2 +1,2 @@
-# the-bootstrap
+.# the-bootstrap
 Personal configuration.
