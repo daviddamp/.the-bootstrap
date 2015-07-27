@@ -134,6 +134,9 @@ nnoremap <leader>U gUiw
 " Remove spaces at the end of the line
 nnoremap <leader>S :%s/[ \t]\+$//g<cr>
 
+" Select what you just pasted
+nnoremap <expr> gV    "`[".getregtype(v:register)[0]."`]"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spell checker
 set spelllang=es,en_us
