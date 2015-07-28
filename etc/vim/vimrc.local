@@ -1,6 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Theme
 colorscheme kalisi
+"colorscheme BusyBee
 
 "colorscheme solarized
 "let g:solarized_termcolors=256
@@ -49,6 +50,9 @@ set relativenumber                       " Relative line numbers
 nmap <leader>n :set number!<CR>
 " Switch relative line numbers
 nmap <leader>r :set relativenumber!<CR>
+
+"let &colorcolumn=join(range(81,999),",")
+"highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " Center line
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
@@ -105,7 +109,7 @@ nnoremap QQ @q
 " Switch paste mode
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
-set showmode
+set noshowmode
 
 " Insert at the beginning of previous line
 nnoremap gi kI

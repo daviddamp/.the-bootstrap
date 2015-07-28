@@ -2,10 +2,12 @@ NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'jeffkreeftmeijer/vim-numbertoggle'
 "NeoBundle 'vimwiki/vimwiki'
 NeoBundle 'terryma/vim-multiple-cursors'
+"NeoBundle 'mipmip/vim-minimap'
 
 "NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 "NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'freeo/vim-kalisi'
+"NeoBundle 'vim-scripts/BusyBee'
 
 NeoBundle 'Glench/Vim-Jinja2-Syntax'

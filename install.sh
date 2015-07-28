@@ -1,7 +1,7 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 
-sudo apt-get install python-dev python-pip python3-dev python3-pip git mercurial yakuake xsel xbindkeys aptitude
+sudo apt-get install python-dev python-pip python3-dev python3-pip git mercurial yakuake xsel xbindkeys aptitude curl htop tree
 
 # Powerline
 pip install --user git+git://github.com/Lokaltog/powerline
@@ -10,6 +10,14 @@ wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
 mkdir -p ~/.fonts/ && mv PowerlineSymbols.otf ~/.fonts/
 fc-cache -vf ~/.fonts
 mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+
+# Source Code Pro font
+pushd .
+dir=`mktemp -d` && cd $dir
+wget https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.tar.gz && tar xzfv 1.030R-it.tar.gz && cp source-code-pro-2.010R-ro-1.030R-it/OTF/* ~/.fonts/
+fc-cache -vf ~/.fonts
+#rm -Rf dir
+popd
 
 # Vim
 sudo apt-get install vim
