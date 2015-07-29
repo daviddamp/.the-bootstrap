@@ -6,6 +6,8 @@ NeoBundle 'terryma/vim-multiple-cursors'
 
 "NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
+NeoBundle 'ludovicchabant/vim-lawrencium'
+
 "NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'freeo/vim-kalisi'
 "NeoBundle 'vim-scripts/BusyBee'
