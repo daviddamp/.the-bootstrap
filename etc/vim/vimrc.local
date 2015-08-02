@@ -54,6 +54,13 @@ nmap <leader>r :set relativenumber!<CR>
 "let &colorcolumn=join(range(81,999),",")
 "highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
+" Python
+autocmd FileType python setlocal colorcolumn=0 tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab iskeyword-=.
+autocmd FileType python setlocal colorcolumn=0 tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+
 " Center line
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 

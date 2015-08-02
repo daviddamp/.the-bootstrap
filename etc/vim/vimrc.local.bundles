@@ -13,3 +13,4 @@ NeoBundle 'freeo/vim-kalisi'
 "NeoBundle 'vim-scripts/BusyBee'
 
 NeoBundle 'Glench/Vim-Jinja2-Syntax'
+NeoBundle 'sophacles/vim-bundle-mako'
