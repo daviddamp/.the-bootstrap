@@ -56,7 +56,9 @@ nmap <leader>r :set relativenumber!<CR>
 
 " Python
 autocmd FileType python setlocal colorcolumn=0 tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab iskeyword-=.
-autocmd FileType python setlocal colorcolumn=0 tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+
+" Javascript
+autocmd FileType javascript setlocal iskeyword-=.
 
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
@@ -84,6 +86,9 @@ nmap <C-t> :tabnew<CR>
 " Create tab
 imap <C-t> <Esc>:tabnew<CR>
 
+nmap <Leader>vv <C-w>t<C-w>H
+nmap <Leader>hh <C-w>t<C-w>K
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search and visualization
 set showmatch
@@ -109,6 +114,9 @@ map . .`[
 
 " Disable vim-boostrap mapping
 unmap P
+
+" Copy&Paste from clipboard
+set clipboard+=unnamedplus
 
 " Run macro 'q'
 nnoremap QQ @q
