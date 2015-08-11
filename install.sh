@@ -53,11 +53,12 @@ ln -s $(pwd)/etc/xbindkeysrc ~/.xbindkeysrc
 xbindkeys
 
 # ksuperkey
-sudo add-apt-repository ppa:mehanik/ksuperkey
+sudo add-apt-repository ppa:mehanik/ksuperkey -y
 sudo aptitude update
 sudo aptitude install ksuperkey
 cat > ~/.kde/Autostart/ksuperkey.sh << EOF
 #!/bin/sh
+killall ksuperkey
 ksuperkey -e 'Super_L=Alt_L|F1;Super_R=Alt_L|F2'
 EOF
 chmod +x ~/.kde/Autostart/ksuperkey.sh
