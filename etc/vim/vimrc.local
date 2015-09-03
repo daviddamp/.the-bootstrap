@@ -156,6 +156,17 @@ nnoremap <leader>S :%s/[ \t]\+$//g<cr>
 " Select what you just pasted
 nnoremap <expr> gV    "`[".getregtype(v:register)[0]."`]"
 
+" Experimenting with alternative keys for cursor movement
+" nnoremap ñ <C-f>
+" nnoremap Ñ <C-b>
+" nnoremap h <C-b>
+" nnoremap m j
+" nnoremap j h
+" nnoremap <C-w><C-j> <C-w><C-h>
+" nnoremap <C-w><C-m> <C-w><C-o>
+" nnoremap <C-j> <C-PageUp>
+" nnoremap <C-l> <C-PageDown>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spell checker
 set spelllang=es,en_us
@@ -164,7 +175,6 @@ set spellsuggest=10
 map <C-F5> :setlocal spell<CR>
 " Show suggestions
 map <M-F5> z=
-" Show suggestions
 imap <M-F5> <ESC>z=
 
 nmap <c-s> :setlocal spell spelllang=es<cr>

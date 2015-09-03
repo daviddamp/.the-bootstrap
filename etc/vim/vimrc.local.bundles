@@ -14,3 +14,4 @@ NeoBundle 'freeo/vim-kalisi'
 
 NeoBundle 'Glench/Vim-Jinja2-Syntax'
 NeoBundle 'sophacles/vim-bundle-mako'
+NeoBundle 'eshock/vim-matchit'

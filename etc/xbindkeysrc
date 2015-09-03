@@ -38,3 +38,8 @@
 "mocp --next"
     m:0x8 + c:41
     Alt + f
+
+# Insert today date
+"xvkbd -xsendevent -text `date +%F`"
+    m:0x8 + c:28
+    Alt + t
