@@ -4,20 +4,20 @@ cd "$(dirname "$0")"
 
 if [ -n "$1" ]; then
 	if [[ "$1" == "server" ]]; then
-		sudo apt-get install python-dev python-pip python3-dev python3-pip git mercurial aptitude curl htop tree unp screen -y
+		sudo apt-get install git mercurial aptitude curl htop tree unp screen -y
 
 		ln -s $(pwd)/etc/screenrc ~/.screenrc
 
-		# Vim
-		sudo apt-get install vim -y
-		mkdir ~/.vim
-		ln -s $(pwd)/etc/vim/ftplugin ~/.vim/
-		#ln -s $(pwd)/etc/vim/ftdetect ~/.vim/
-		ln -s $(pwd)/etc/vim/UltiSnips ~/.vim/
+		# # Vim
+		# sudo apt-get install vim -y
+		# mkdir ~/.vim
+		# ln -s $(pwd)/etc/vim/ftplugin ~/.vim/
+		# #ln -s $(pwd)/etc/vim/ftdetect ~/.vim/
+		# ln -s $(pwd)/etc/vim/UltiSnips ~/.vim/
 
-		ln -s $(pwd)/etc/vim/vimrc ~/.vimrc
-		ln -s $(pwd)/etc/vim/vimrc.local ~/.vimrc.local
-		ln -s $(pwd)/etc/vim/vimrc.local.bundles ~/.vimrc.local.bundles
+		# ln -s $(pwd)/etc/vim/vimrc ~/.vimrc
+		# ln -s $(pwd)/etc/vim/vimrc.local ~/.vimrc.local
+		# ln -s $(pwd)/etc/vim/vimrc.local.bundles ~/.vimrc.local.bundles
 
 		# # Nvim
 		# sudo add-apt-repository ppa:neovim-ppa/unstable -y
