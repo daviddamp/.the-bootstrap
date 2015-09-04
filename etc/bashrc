@@ -12,14 +12,17 @@ if [ -d "$HOME/Proyectos" ]; then
 	CDPATH=$CDPATH:$HOME/Proyectos
 fi
 
-
 export TERM=xterm-256color
 
-if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
-    source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+if [ -n "$1" ]; then
+	if [[ "$1" == "server" ]]; then
+		export PS1="\[\033[1;34m\]\u@\H \[\033[1;33m\]\w\[\033[0m\]\$ "
+	else
+		if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
+			source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+		fi
+	fi
 fi
-
-#export PS1="\[\033[1;34m\]\u@\H \[\033[1;33m\]\w\[\033[0m\]\$ "
 
 export EDITOR=vim
 
@@ -44,14 +47,20 @@ function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 ? () { echo "$*" | bc -l; }
 
 alias today='date +%F'
-alias pylab='ipython -pylab'
 alias wcat='wget -qO-'
-
-alias here='pwd | xsel --clipboard'
-alias there='cd "`xsel --clipboard`"'
 
 alias vims='TERM=xterm-256color vim -S Session.vim'
 alias vim='TERM=xterm-256color vim -p'
-alias nv='nvim -p'
+
+if [ -n "$1" ]; then
+	if [[ "$1" == "server" ]]; then
+		alias nv='vim -p'
+	else
+		alias nv='nvim -p'
+
+		alias here='pwd | xsel --clipboard'
+		alias there='cd "`xsel --clipboard`"'
+	fi
+fi
 
 alias lost='clear; tail -n 52 ~/lost.txt; (cat >> ~/lost.txt)'
