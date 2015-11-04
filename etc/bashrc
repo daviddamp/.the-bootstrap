@@ -57,6 +57,7 @@ if [ -n "$1" ]; then
 		alias nv='vim -p'
 	else
 		alias nv='nvim -p'
+		alias nv='nvim -u ~/.nvimrc -p'
 
 		alias here='pwd | xsel --clipboard'
 		alias there='cd "`xsel --clipboard`"'
