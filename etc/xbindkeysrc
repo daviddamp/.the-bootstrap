@@ -1,27 +1,27 @@
 # Reference: http://www.mabishu.com/blog/2010/11/15/playing-with-d-bus-interface-of-spotify-for-linux/
 "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause"
-	m:0x8 + c:53
+   m:0x8 + c:53
 
 "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-	m:0x8 + c:54
+   m:0x8 + c:54
 
 "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-	m:0x8 + c:52
+   m:0x8 + c:52
 
 "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
-	m:0x8 + c:55
+   m:0x8 + c:55
 
 "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause; qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock"
-	m:0x18 + c:24
-	Alt+Mod2 + q
+    m:0x18 + c:24
+    Alt+Mod2 + q
 
 "amixer -D pulse sset Master 10%+"
-	m:0x18 + c:86
-	Alt+Mod2 + KP_Add
+    m:0x18 + c:86
+    Alt+Mod2 + KP_Add
 
 "amixer -D pulse sset Master 10%-"
-	m:0x18 + c:82
-	Alt+Mod2 + KP_Subtract
+    m:0x18 + c:82
+    Alt+Mod2 + KP_Subtract
 
 "mocp --previous"
     m:0x8 + c:38
@@ -43,3 +43,8 @@
 "xvkbd -xsendevent -text `date +%F`"
     m:0x8 + c:28
     Alt + t
+
+# Insert random password
+"xvkbd -xsendevent -text `date +%s | sha256sum | base64 | head -c 8`"
+    m:0x8 + c:33
+    Alt + p
