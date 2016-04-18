@@ -55,10 +55,11 @@ nmap <leader>r :set relativenumber!<CR>
 "highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " Python
-autocmd FileType python setlocal colorcolumn=0 tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab iskeyword-=.
+" autocmd FileType python setlocal colorcolumn=0 tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab iskeyword-=. nosmartindent
+autocmd FileType python setlocal colorcolumn=0 iskeyword-=.
 
 " Javascript
-autocmd FileType javascript setlocal iskeyword-=.
+autocmd FileType javascript setlocal iskeyword-=.,#
 
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
