@@ -21,7 +21,7 @@ alias -- -='popd'
 EOF
 fi
 
-cat > ~/.screenrc < EOF
+cat > ~/.screenrc << EOF
 startup_message off
 altscreen on
 term screen-256color
