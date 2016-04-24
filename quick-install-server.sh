@@ -1,5 +1,5 @@
 # Call with:
-# $ bash <(curl -s https://raw.githubusercontent.com/cristobalcl/.the-bootstrap/server/quick-install-server.sh)
+# $ bash <(curl -s https://raw.githubusercontent.com/cristobalcl/.the-bootstrap/master/quick-install-server.sh)
 
 # Bashrc
 if ! grep --quiet 'By the-bootstrap:' ~/.bashrc ; then
