@@ -1,7 +1,7 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 
-sudo apt-get install python-dev python-pip python3-dev python3-pip git mercurial yakuake xsel xbindkeys aptitude curl htop tree x2goclient unp xvkbd
+sudo apt-get install python-dev python-pip python3-dev python3-pip git mercurial yakuake xsel xbindkeys aptitude curl htop tree x2goclient unp xvkbd encfs
 
 # Powerline
 pip install --user git+git://github.com/Lokaltog/powerline

@@ -16,4 +16,4 @@ NeoBundle 'Glench/Vim-Jinja2-Syntax'
 NeoBundle 'sophacles/vim-bundle-mako'
 NeoBundle 'eshock/vim-matchit'
 
-NeoBundle 'chase/vim-ansible-yaml'
+NeoBundle 'pearofducks/ansible-vim'

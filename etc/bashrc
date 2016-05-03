@@ -55,3 +55,6 @@ alias vim='TERM=xterm-256color vim -p'
 alias nv='nvim -u ~/.nvimrc -p'
 
 alias lost='clear; tail -n 52 ~/lost.txt; (cat >> ~/lost.txt)'
+
+alias privateOn='encfs ~/Dropbox/.private/ ~/Privado'
+alias privateOff='fusermount -u /home/$USER/Privado'
