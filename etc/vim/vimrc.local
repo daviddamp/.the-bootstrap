@@ -55,7 +55,8 @@ nmap <leader>r :set relativenumber!<CR>
 "highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " Python
-autocmd FileType python setlocal colorcolumn=0 tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab iskeyword-=.
+" autocmd FileType python setlocal colorcolumn=0 tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab iskeyword-=.
+autocmd FileType python setlocal colorcolumn=0 tabstop=4 softtabstop=4 shiftwidth=4 expandtab iskeyword-=.
 
 " Javascript
 autocmd FileType javascript setlocal iskeyword-=.
