@@ -17,3 +17,5 @@ NeoBundle 'sophacles/vim-bundle-mako'
 NeoBundle 'eshock/vim-matchit'
 
 NeoBundle 'pearofducks/ansible-vim'
+
+NeoBundle 'vimwiki/vimwiki'
