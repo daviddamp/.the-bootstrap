@@ -1,6 +1,5 @@
 NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'jeffkreeftmeijer/vim-numbertoggle'
-"NeoBundle 'vimwiki/vimwiki'
 NeoBundle 'terryma/vim-multiple-cursors'
 "NeoBundle 'mipmip/vim-minimap'
 
