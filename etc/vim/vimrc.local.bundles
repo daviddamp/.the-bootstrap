@@ -1,20 +1,20 @@
-NeoBundle 'jistr/vim-nerdtree-tabs'
-NeoBundle 'jeffkreeftmeijer/vim-numbertoggle'
-NeoBundle 'terryma/vim-multiple-cursors'
-"NeoBundle 'mipmip/vim-minimap'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'terryma/vim-multiple-cursors'
+"Plug 'mipmip/vim-minimap'
 
-"NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
-NeoBundle 'ludovicchabant/vim-lawrencium'
+Plug 'ludovicchabant/vim-lawrencium'
 
-"NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'freeo/vim-kalisi'
-"NeoBundle 'vim-scripts/BusyBee'
+"Plug 'altercation/vim-colors-solarized'
+Plug 'freeo/vim-kalisi'
+"Plug 'vim-scripts/BusyBee'
 
-NeoBundle 'Glench/Vim-Jinja2-Syntax'
-NeoBundle 'sophacles/vim-bundle-mako'
-NeoBundle 'eshock/vim-matchit'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'sophacles/vim-bundle-mako'
+Plug 'eshock/vim-matchit'
 
-NeoBundle 'pearofducks/ansible-vim'
+Plug 'pearofducks/ansible-vim'
 
-NeoBundle 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'
