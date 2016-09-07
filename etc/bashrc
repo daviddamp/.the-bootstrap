@@ -58,3 +58,7 @@ alias lost='clear; tail -n 52 ~/lost.txt; (cat >> ~/lost.txt)'
 
 alias privateOn='encfs ~/Dropbox/.private/ ~/Privado'
 alias privateOff='fusermount -u /home/$USER/Privado'
+
+# Top 10 biggest files/directories in the current directory:
+# https://plus.google.com/+MattMight/posts/6NJJeExpqQW
+alias ducks='du -cks * | sort -rn | head'
