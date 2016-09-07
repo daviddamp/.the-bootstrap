@@ -39,7 +39,7 @@ alias -- +='pushd .'
 alias -- -='popd'
 alias epwd='ls "`pwd`" -db'
 
-function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 ? () { echo "$*" | bc -l; }
 
