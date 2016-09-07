@@ -252,4 +252,4 @@ let g:vimwiki_list=[
 					\{'path': '~/.vimwiki', 'path_html': '~/vimwiki/html'},
 					\{'path': '~/Privado/vimwiki/private', 'path_html': '~/Privado/vimwiki/private/html'},
 					\{'path': '~/Dropbox/vimwiki/public', 'path_html': '~/Dropbox/Public/wiki/html'}]
-let g:vimwiki_browsers=['/usr/bin/google-chrome']
+let g:vimwiki_browsers=['/usr/bin/firefox']
