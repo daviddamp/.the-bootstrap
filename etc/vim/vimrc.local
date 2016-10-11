@@ -25,6 +25,9 @@ nnoremap <Leader>v :source $MYVIMRC<CR>
 " Shell
 set shell=/bin/bash
 
+" Experimental: use '-' for commands.
+nnoremap - :
+
 " Disable F1 key
 inoremap <F1> <Nop>
 nnoremap <F1> <Nop>
@@ -88,7 +91,9 @@ nmap <Leader>vv <C-w>t<C-w>H
 nmap <Leader>hh <C-w>t<C-w>K
 
 " Hihglight long lines
-highlight ColorColumn ctermbg=239 guibg=#2c2d27
+highlight ColorColumn ctermbg=237 guibg=#2c2d27
+" highlight ColorColumn ctermbg=239 guibg=#2c2d27
+" highlight ColorColumn ctermbg=240 guibg=#2c2d27
 " let &colorcolumn=join(range(81,999),",")
 " let &colorcolumn="80,".join(range(120,999),",")
 call matchadd('ColorColumn', '\%81v', -1)
