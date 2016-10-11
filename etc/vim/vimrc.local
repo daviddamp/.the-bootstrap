@@ -51,9 +51,6 @@ nmap <leader>n :set number!<CR>
 " Switch relative line numbers
 nmap <leader>r :set relativenumber!<CR>
 
-"let &colorcolumn=join(range(81,999),",")
-"highlight ColorColumn ctermbg=235 guibg=#2c2d27
-
 " Python
 " autocmd FileType python setlocal colorcolumn=0 tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab iskeyword-=. nosmartindent
 autocmd FileType python setlocal colorcolumn=0 iskeyword-=. nosmartindent cindent
@@ -89,6 +86,13 @@ imap <C-t> <Esc>:tabnew<CR>
 
 nmap <Leader>vv <C-w>t<C-w>H
 nmap <Leader>hh <C-w>t<C-w>K
+
+" Hihglight long lines
+highlight ColorColumn ctermbg=239 guibg=#2c2d27
+" let &colorcolumn=join(range(81,999),",")
+" let &colorcolumn="80,".join(range(120,999),",")
+call matchadd('ColorColumn', '\%81v', -1)
+let &colorcolumn=join(range(120,999),",")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search and visualization
