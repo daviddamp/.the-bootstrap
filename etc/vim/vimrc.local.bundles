@@ -11,6 +11,8 @@ Plug 'ludovicchabant/vim-lawrencium'
 Plug 'freeo/vim-kalisi'
 "Plug 'vim-scripts/BusyBee'
 
+Plug 'Yggdroot/indentLine'
+
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'sophacles/vim-bundle-mako'
 Plug 'eshock/vim-matchit'
