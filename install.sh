@@ -11,12 +11,18 @@ mkdir -p ~/.fonts/ && mv PowerlineSymbols.otf ~/.fonts/
 fc-cache -vf ~/.fonts
 mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 
-# Source Code Pro font
+# # Source Code Pro font
+# pushd .
+# dir=`mktemp -d` && cd $dir
+# wget https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.tar.gz && tar xzfv 1.030R-it.tar.gz && cp source-code-pro-2.010R-ro-1.030R-it/OTF/* ~/.fonts/
+# fc-cache -vf ~/.fonts
+# #rm -Rf dir
+# popd
+
+# Source Code Nerd Font
 pushd .
-dir=`mktemp -d` && cd $dir
-wget https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.tar.gz && tar xzfv 1.030R-it.tar.gz && cp source-code-pro-2.010R-ro-1.030R-it/OTF/* ~/.fonts/
-fc-cache -vf ~/.fonts
-#rm -Rf dir
+mkdir -p ~/.fonts
+cd ~/.fonts && curl -fLo "Sauce Code Pro Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf
 popd
 
 # Vim
