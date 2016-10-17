@@ -24,6 +24,7 @@ nnoremap <Leader>v :source $MYVIMRC<CR>
 
 " Shell
 set shell=/bin/bash
+set autochdir
 
 " Experimental: use '-' for commands.
 nnoremap - :
