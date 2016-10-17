@@ -1,4 +1,5 @@
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'terryma/vim-multiple-cursors'
 "Plug 'mipmip/vim-minimap'
@@ -20,3 +21,6 @@ Plug 'eshock/vim-matchit'
 Plug 'pearofducks/ansible-vim'
 
 Plug 'vimwiki/vimwiki'
+
+"Load last
+Plug 'ryanoasis/vim-devicons'

@@ -25,6 +25,9 @@ nnoremap <Leader>v :source $MYVIMRC<CR>
 " Shell
 set shell=/bin/bash
 
+" Experimental: use '-' for commands.
+nnoremap - :
+
 " Disable F1 key
 inoremap <F1> <Nop>
 nnoremap <F1> <Nop>
@@ -50,9 +53,6 @@ set relativenumber                       " Relative line numbers
 nmap <leader>n :set number!<CR>
 " Switch relative line numbers
 nmap <leader>r :set relativenumber!<CR>
-
-"let &colorcolumn=join(range(81,999),",")
-"highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " Python
 " autocmd FileType python setlocal colorcolumn=0 tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab iskeyword-=. nosmartindent
@@ -89,6 +89,15 @@ imap <C-t> <Esc>:tabnew<CR>
 
 nmap <Leader>vv <C-w>t<C-w>H
 nmap <Leader>hh <C-w>t<C-w>K
+
+" Hihglight long lines
+highlight ColorColumn ctermbg=237 guibg=#2c2d27
+" highlight ColorColumn ctermbg=239 guibg=#2c2d27
+" highlight ColorColumn ctermbg=240 guibg=#2c2d27
+" let &colorcolumn=join(range(81,999),",")
+" let &colorcolumn="80,".join(range(120,999),",")
+call matchadd('ColorColumn', '\%81v', -1)
+let &colorcolumn=join(range(120,999),",")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search and visualization
@@ -252,4 +261,4 @@ let g:vimwiki_list=[
 					\{'path': '~/.vimwiki', 'path_html': '~/vimwiki/html'},
 					\{'path': '~/Privado/vimwiki/private', 'path_html': '~/Privado/vimwiki/private/html'},
 					\{'path': '~/Dropbox/vimwiki/public', 'path_html': '~/Dropbox/Public/wiki/html'}]
-let g:vimwiki_browsers=['/usr/bin/google-chrome']
+let g:vimwiki_browsers=['/usr/bin/firefox']

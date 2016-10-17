@@ -45,6 +45,6 @@
     Alt + t
 
 # Insert random password
-"xvkbd -xsendevent -text `date +%s | sha256sum | base64 | head -c 8`"
+"xvkbd -xsendevent -text `echo $RANDOM | sha256sum | base64 | head -c 8`"
     m:0x8 + c:33
     Alt + p
