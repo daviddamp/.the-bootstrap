@@ -55,9 +55,10 @@ nmap <leader>n :set number!<CR>
 " Switch relative line numbers
 nmap <leader>r :set relativenumber!<CR>
 
-" Python
-" autocmd FileType python setlocal colorcolumn=0 tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab iskeyword-=. nosmartindent
-autocmd FileType python setlocal colorcolumn=0 iskeyword-=. nosmartindent cindent
+" Python (disable vim-bootstrap config)
+augroup vimrc-python
+  autocmd!
+augroup END
 
 " Javascript
 autocmd FileType javascript setlocal iskeyword-=.,#
@@ -95,10 +96,10 @@ nmap <Leader>hh <C-w>t<C-w>K
 highlight ColorColumn ctermbg=237 guibg=#2c2d27
 " highlight ColorColumn ctermbg=239 guibg=#2c2d27
 " highlight ColorColumn ctermbg=240 guibg=#2c2d27
-" let &colorcolumn=join(range(81,999),",")
-" let &colorcolumn="80,".join(range(120,999),",")
 call matchadd('ColorColumn', '\%81v', -1)
-let &colorcolumn=join(range(120,999),",")
+" let &colorcolumn=join(range(120,999),",")
+let &colorcolumn=join(range(81,999),",")
+" let &colorcolumn="80,".join(range(120,999),",")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search and visualization
