@@ -60,6 +60,12 @@ augroup vimrc-python
   autocmd!
 augroup END
 
+" TypeScript
+augroup vimrc-typescript
+  " autocmd!
+  autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+augroup END
+
 " Javascript
 autocmd FileType javascript setlocal iskeyword-=.,#
 
@@ -252,7 +258,7 @@ vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree and NERDTreeTabs
-let NERDTreeIgnore = ['\.pyc$']
+" let NERDTreeIgnore = ['\.pyc$']
 
 map <Leader>f <plug>NERDTreeTabsToggle<CR>
 
