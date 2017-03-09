@@ -1,16 +1,16 @@
-Plug 'jistr/vim-nerdtree-tabs'
+" Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
+" Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'terryma/vim-multiple-cursors'
-"Plug 'mipmip/vim-minimap'
+" Plug 'mipmip/vim-minimap'
 
-"Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
-Plug 'ludovicchabant/vim-lawrencium'
+" Plug 'ludovicchabant/vim-lawrencium'
 
-"Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'freeo/vim-kalisi'
-"Plug 'vim-scripts/BusyBee'
+" Plug 'vim-scripts/BusyBee'
 
 Plug 'Yggdroot/indentLine'
 
@@ -22,5 +22,5 @@ Plug 'pearofducks/ansible-vim'
 
 Plug 'vimwiki/vimwiki'
 
-"Load last
+" Load last
 Plug 'ryanoasis/vim-devicons'
