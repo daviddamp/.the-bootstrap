@@ -60,8 +60,8 @@ xbindkeys
 
 # ksuperkey
 sudo add-apt-repository ppa:mehanik/ksuperkey -y
-sudo aptitude update
-sudo aptitude install ksuperkey
+sudo apt-get update
+sudo apt-get install ksuperkey
 mkdir -p ~/.kde/Autostart
 cat > ~/.kde/Autostart/ksuperkey.sh << EOF
 #!/bin/sh
