@@ -55,6 +55,18 @@ source $(pwd)/etc/bashrc
 EOF
 fi
 
+# Fish shell
+sudo apt-add-repository ppa:fish-shell/release-2
+sudo apt-get update
+sudo apt-get install fish
+mkdir -p ~/.config/fish/functions
+ln -s $(pwd)/etc/fish/* ~/.config/fish
+# Fisherman
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+# Bass
+fisher edc/bass
+
+# xbindkeys
 ln -s $(pwd)/etc/xbindkeysrc ~/.xbindkeysrc
 xbindkeys
 
