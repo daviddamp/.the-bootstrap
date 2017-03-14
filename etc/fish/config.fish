@@ -3,6 +3,7 @@
 function fish_greeting
 	set_color $fish_color_autosuggestion
 	uname -nmsr
+	echo (lsb_release -s -d) "|" (lsb_release -s -r) (lsb_release -s -c)
 	# uptime
 	set_color normal
 end
