@@ -12,6 +12,9 @@ abbr -a -- - 'popd'
 # function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 # ? () { echo "$*" | bc -l; }
+function =
+	echo "$argv" | bc -l
+end
 
 alias today "date +%F"
 # alias pylab='ipython -pylab'
