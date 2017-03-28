@@ -23,10 +23,12 @@ mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf ~/.config/
 pushd .
 mkdir -p ~/.fonts
 cd ~/.fonts && curl -fLo "Sauce Code Pro Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf
+# mkdir -p ~/.local/share/fonts
+# cd ~/.local/share/fonts && curl -fLo "Sauce Code Pro Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf
 popd
 
 # Vim
-sudo apt-get install vim
+sudo apt-get install vim vim-athena-py2
 mkdir ~/.vim
 ln -s $(pwd)/etc/vim/ftplugin ~/.vim/
 #ln -s $(pwd)/etc/vim/ftdetect ~/.vim/
@@ -65,6 +67,8 @@ ln -s $(pwd)/etc/fish/* ~/.config/fish
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 # Bass
 fisher edc/bass
+# Z
+fisher z
 
 # xbindkeys
 ln -s $(pwd)/etc/xbindkeysrc ~/.xbindkeysrc
@@ -82,3 +86,6 @@ ksuperkey -e 'Super_L=Alt_L|F1;Super_R=Alt_L|F2'
 EOF
 chmod +x ~/.kde/Autostart/ksuperkey.sh
 ~/.kde/Autostart/ksuperkey.sh
+
+# howdoi command
+pip install --user howdoi
