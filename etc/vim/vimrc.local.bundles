@@ -22,5 +22,7 @@ Plug 'pearofducks/ansible-vim'
 
 Plug 'vimwiki/vimwiki'
 
+Plug 'laurentgoudet/vim-howdoi'
+
 " Load last
 Plug 'ryanoasis/vim-devicons'

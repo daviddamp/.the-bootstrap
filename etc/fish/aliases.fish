@@ -23,8 +23,10 @@ alias today "date +%F"
 alias here "pwd | xsel --clipboard"
 alias there 'cd (xsel --clipboard)'
 
-alias vims "env TERM=xterm-256color vim -S Session.vim"
-alias vim "env TERM=xterm-256color vim -p"
+# alias vims "env TERM=xterm-256color vim -S Session.vim"
+# alias vim "env TERM=xterm-256color vim -p"
+alias vims "env TERM=xterm-256color vim.athena-py2 -S Session.vim"
+alias vim "env TERM=xterm-256color vim.athena-py2 -p"
 # alias nv='nvim -u ~/.nvimrc -p'
 
 alias lost "clear; tail -n 52 ~/lost.txt; cat >> ~/lost.txt"
