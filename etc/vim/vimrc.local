@@ -55,6 +55,15 @@ nmap <leader>n :set number!<CR>
 " Switch relative line numbers
 nmap <leader>r :set relativenumber!<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indent & syntax
+" Show existing tab with 4 spaces width
+set tabstop=4
+" When indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
 " Python (disable vim-bootstrap config)
 augroup vimrc-python
   autocmd!
@@ -62,8 +71,8 @@ augroup END
 
 " TypeScript
 augroup vimrc-typescript
-  " autocmd!
-  autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd!
+  autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 augroup END
 
 " Javascript
