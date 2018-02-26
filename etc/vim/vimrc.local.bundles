@@ -17,12 +17,19 @@ Plug 'Yggdroot/indentLine'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'sophacles/vim-bundle-mako'
 Plug 'eshock/vim-matchit'
+Plug 'khzaw/vim-conceal'
+
+if has('nvim')
+	Plug 'neomake/neomake'
+	Plug 'BurningEther/iron.nvim', {'do': ':UpdateRemotePlugins'}
+endif
 
 Plug 'pearofducks/ansible-vim'
 
 Plug 'vimwiki/vimwiki'
 
 Plug 'laurentgoudet/vim-howdoi'
+
 
 " Load last
 Plug 'ryanoasis/vim-devicons'

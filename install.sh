@@ -1,10 +1,14 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 
-sudo apt-get install python-dev python-pip python3-dev python3-pip git mercurial yakuake xsel xbindkeys aptitude curl htop tree x2goclient unp xvkbd encfs
+if grep --quiet '^ID=opensuse' /etc/os-release; then
+	sudo zypper install python3-devel python-devel git xbindkeys Yakuake xsel curl tree htop file-unpack encfs xvkbd
+else
+	sudo apt-get install python-dev python-pip python3-dev python3-pip git mercurial yakuake xsel xbindkeys aptitude curl htop tree x2goclient unp xvkbd encfs
+fi
 
 # Powerline
-pip install --user git+git://github.com/Lokaltog/powerline
+pip3 install --user git+git://github.com/Lokaltog/powerline
 
 wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
 mkdir -p ~/.fonts/ && mv PowerlineSymbols.otf ~/.fonts/
@@ -28,7 +32,11 @@ cd ~/.fonts && curl -fLo "Sauce Code Pro Nerd Font Complete Mono.ttf" https://gi
 popd
 
 # Vim
-sudo apt-get install vim vim-athena-py2
+if grep --quiet '^ID=opensuse' /etc/os-release; then
+	echo TODO
+else
+	sudo apt-get install vim vim-athena-py2
+fi
 mkdir ~/.vim
 ln -s $(pwd)/etc/vim/ftplugin ~/.vim/
 #ln -s $(pwd)/etc/vim/ftdetect ~/.vim/
@@ -39,13 +47,22 @@ ln -s $(pwd)/etc/vim/vimrc.local ~/.vimrc.local
 ln -s $(pwd)/etc/vim/vimrc.local.bundles ~/.vimrc.local.bundles
 
 # Nvim
-sudo add-apt-repository ppa:neovim-ppa/unstable -y
-sudo apt-get update
-sudo apt-get install neovim
-sudo pip install neovim
-ln -s $(pwd)/etc/vim/vimrc ~/.nvimrc
-ln -s $(pwd)/etc/vim/vimrc.local ~/.nvimrc.local
-ln -s $(pwd)/etc/vim/vimrc.local.bundles ~/.nvimrc.local.bundles
+if grep --quiet '^ID=opensuse' /etc/os-release; then
+	mkdir -p ~/bin
+	cd ~/bin
+	curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+	chmod u+x nvim.appimage
+	mv nvim.appimage nvim
+else
+	sudo add-apt-repository ppa:neovim-ppa/unstable -y
+	sudo apt-get update
+	sudo apt-get install neovim
+fi
+pip3 install --user neovim jedi psutil setproctitle
+pip install --user neovim jedi psutil setproctitle
+
+mkdir ~/.config/nvim
+ln -s $(pwd)/etc/vim/vimrc ~/.config/nvim/init.vim
 ln -s ~/.vim ~/.nvim
 
 # Bashrc
@@ -58,9 +75,13 @@ EOF
 fi
 
 # Fish shell
-sudo apt-add-repository ppa:fish-shell/release-2
-sudo apt-get update
-sudo apt-get install fish
+if grep --quiet '^ID=opensuse' /etc/os-release; then
+	sudo zypper install fish
+else
+	sudo apt-add-repository ppa:fish-shell/release-2
+	sudo apt-get update
+	sudo apt-get install fish
+fi
 mkdir -p ~/.config/fish/functions
 ln -s $(pwd)/etc/fish/* ~/.config/fish
 # Fisherman
@@ -75,17 +96,22 @@ ln -s $(pwd)/etc/xbindkeysrc ~/.xbindkeysrc
 xbindkeys
 
 # ksuperkey
-sudo add-apt-repository ppa:mehanik/ksuperkey -y
-sudo apt-get update
-sudo apt-get install ksuperkey
-mkdir -p ~/.kde/Autostart
-cat > ~/.kde/Autostart/ksuperkey.sh << EOF
+if grep --quiet '^ID=opensuse' /etc/os-release; then
+	echo TODO
+else
+	sudo add-apt-repository ppa:mehanik/ksuperkey -y
+	sudo apt-get update
+	sudo apt-get install ksuperkey
+
+	mkdir -p ~/.kde/Autostart
+	cat > ~/.kde/Autostart/ksuperkey.sh << EOF
 #!/bin/sh
 killall ksuperkey
 ksuperkey -e 'Super_L=Alt_L|F1;Super_R=Alt_L|F2'
 EOF
-chmod +x ~/.kde/Autostart/ksuperkey.sh
-~/.kde/Autostart/ksuperkey.sh
+	chmod +x ~/.kde/Autostart/ksuperkey.sh
+	~/.kde/Autostart/ksuperkey.sh
+fi
 
 # howdoi command
-pip install --user howdoi
+pip3 install --user howdoi

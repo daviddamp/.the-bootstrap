@@ -210,6 +210,22 @@ iabbr urrlib2 urllib2
 iabbr ^2 ²
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Iron
+if has('nvim')
+	" deactivate default mappings
+	let g:iron_map_defaults = 0
+	let g:iron_repl_open_cmd = 'vsplit'
+
+	" define custom mappings for the python filetype
+	augroup ironmapping
+		autocmd!
+		autocmd Filetype python nmap <buffer> <Leader>t <Plug>(iron-send-motion)
+		autocmd Filetype python vmap <buffer> <Enter> <Plug>(iron-send-motion)
+		autocmd Filetype python nmap <buffer> <Leader>p <Plug>(iron-repeat-cmd)
+	augroup END
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Close hidden buffers
 function! CloseHiddenBuffers()
 	" figure out which buffers are visible in any tab

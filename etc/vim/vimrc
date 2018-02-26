@@ -5,7 +5,11 @@ if has('vim_starting')
   set nocompatible               " Be iMproved
 endif
 
-let vimplug_exists=expand('~/.vim/autoload/plug.vim')
+if has('nvim')
+	let vimplug_exists=expand('~/.local/share/nvim/site/autoload/plug.vim')
+else
+	let vimplug_exists=expand('~/.vim/autoload/plug.vim')
+endif
 
 let g:vim_bootstrap_langs = "javascript,python,c,html"
 let g:vim_bootstrap_editor = "vim"				" nvim or vim
@@ -13,7 +17,11 @@ let g:vim_bootstrap_editor = "vim"				" nvim or vim
 if !filereadable(vimplug_exists)
   echo "Installing Vim-Plug..."
   echo ""
-  silent !\curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  if has('nvim')
+	  silent !\curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  else
+	  silent !\curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  endif
   let g:not_finish_vimplug = "yes"
 
   " Run shell script if exist on custom select language
@@ -72,6 +80,9 @@ Plug 'tomasr/molokai'
 
 "" Custom bundles
 "" Python Bundle
+if has('nvim')
+	Plug 'roxma/nvim-completion-manager'
+endif
 Plug 'davidhalter/jedi-vim'
 
 Plug 'vim-scripts/c.vim'
