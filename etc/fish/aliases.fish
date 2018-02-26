@@ -36,6 +36,9 @@ alias lost "clear; tail -n 52 ~/lost.txt; cat >> ~/lost.txt"
 
 # Top 10 biggest files/directories in the current directory:
 # https://plus.google.com/+MattMight/posts/6NJJeExpqQW
-alias ducks 'du -cks * | sort -rn | head'
+alias ducks='du -cks * | sort -rn | head'
+# alias unp 'file-unpack'
 
-alias unp 'file-unpack'
+# Find and remove *.pyc
+# http://stackoverflow.com/questions/785519/how-do-i-remove-all-pyc-files-from-a-project
+alias pycdel='find . -name \*.pyc -delete'
