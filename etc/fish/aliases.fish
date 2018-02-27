@@ -27,7 +27,8 @@ alias there 'cd (xsel --clipboard)'
 # alias vim "env TERM=xterm-256color vim -p"
 # alias vims "env TERM=xterm-256color vim.athena-py2 -S Session.vim"
 # alias vim "env TERM=xterm-256color vim.athena-py2 -p"
-# alias nv='nvim -u ~/.nvimrc -p'
+alias vim "vim.athena-py2"
+alias nv "env TERM=xterm-256color nvim"
 
 alias lost "clear; tail -n 52 ~/lost.txt; cat >> ~/lost.txt"
 
