@@ -59,7 +59,7 @@ else
 	sudo apt-get install neovim
 fi
 pip3 install --user neovim jedi psutil setproctitle
-pip install --user neovim jedi psutil setproctitle
+pip2 install --user neovim jedi psutil setproctitle
 
 mkdir ~/.config/nvim
 ln -s $(pwd)/etc/vim/vimrc ~/.config/nvim/init.vim

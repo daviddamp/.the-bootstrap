@@ -64,6 +64,9 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
+" Bash (disable fi -> if)
+autocmd FileType sh unabbreviate fi
+
 " Python (disable vim-bootstrap config)
 augroup vimrc-python
   autocmd!
