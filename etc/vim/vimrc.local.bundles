@@ -4,6 +4,9 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'terryma/vim-multiple-cursors'
 " Plug 'mipmip/vim-minimap'
 
+" Swap windows with <Leader>ww
+" Plug 'wesQ3/vim-windowswap'
+
 " Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " Plug 'ludovicchabant/vim-lawrencium'
@@ -17,10 +20,12 @@ Plug 'Yggdroot/indentLine'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'sophacles/vim-bundle-mako'
 Plug 'eshock/vim-matchit'
-Plug 'khzaw/vim-conceal'
+" Plug 'khzaw/vim-conceal'
+
+Plug 'w0rp/ale'
 
 if has('nvim')
-	Plug 'neomake/neomake'
+	" Plug 'neomake/neomake'
 	Plug 'BurningEther/iron.nvim', {'do': ':UpdateRemotePlugins'}
 endif
 
@@ -29,7 +34,6 @@ Plug 'pearofducks/ansible-vim'
 Plug 'vimwiki/vimwiki'
 
 Plug 'laurentgoudet/vim-howdoi'
-
 
 " Load last
 Plug 'ryanoasis/vim-devicons'

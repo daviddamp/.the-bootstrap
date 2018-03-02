@@ -8,8 +8,14 @@ colorscheme kalisi
 
 set background=dark
 
+" highlight Conceal guifg=#ff0000 guibg=#00ff00
+
 " let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
+
+" map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+"             \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+"             \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Session and configuration
@@ -23,7 +29,7 @@ set lazyredraw
 nnoremap <Leader>v :source $MYVIMRC<CR>
 
 " Shell
-set shell=/bin/bash
+set shell=/usr/bin/fish
 set autochdir
 
 " Experimental: use '-' for commands.
@@ -65,7 +71,7 @@ set shiftwidth=4
 set expandtab
 
 " Bash (disable fi -> if)
-autocmd FileType sh unabbreviate fi
+autocmd FileType sh silent! unabbreviate fi
 
 " Python (disable vim-bootstrap config)
 augroup vimrc-python
@@ -138,6 +144,12 @@ set listchars=tab:▸.,trail:.,extends:…,nbsp:.,eol:¬
 "highlight SpecialKey ctermfg=8 ctermbg=0
 match ErrorMsg /\s\+$/                  " Highlight spaces at the end of the line
 
+" Clear signs columns (Neomake errors,...)
+noremap <silent> <leader>cls :sign unplace *<CR>:set signcolumn=auto<CR>
+
+" For yapf plugin
+autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Edition
 " Repeat last action and move to the beginning of the edition
@@ -163,7 +175,7 @@ nnoremap gi kI
 nnoremap gO O<ESC>O<ESC>o
 nnoremap go o<ESC>o<ESC>O
 " Swap words
-nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
 " Append line after next line
 nnoremap gl ddpkJ
 " Cut line and paste before this line
