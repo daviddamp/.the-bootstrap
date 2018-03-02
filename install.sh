@@ -113,5 +113,8 @@ EOF
 	~/.kde/Autostart/ksuperkey.sh
 fi
 
+# Google YAPF (code formatter)
+pip3 install --user yapf
+
 # howdoi command
 pip3 install --user howdoi
