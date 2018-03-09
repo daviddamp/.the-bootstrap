@@ -22,7 +22,8 @@ Plug 'sophacles/vim-bundle-mako'
 Plug 'eshock/vim-matchit'
 " Plug 'khzaw/vim-conceal'
 
-Plug 'w0rp/ale'
+" Linter
+" Plug 'w0rp/ale'
 
 if has('nvim')
 	" Plug 'neomake/neomake'

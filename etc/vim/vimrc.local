@@ -40,7 +40,7 @@ inoremap <F1> <Nop>
 nnoremap <F1> <Nop>
 vnoremap <F1> <Nop>
 
-unmap <TAB>
+" unmap <TAB>
 
 " Wild menu
 set wildignore=*.swp,*.bak,*.pyc,*.class
@@ -69,6 +69,8 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+
+let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/UltiSnips', 'UltiSnips']
 
 " Bash (disable fi -> if)
 autocmd FileType sh silent! unabbreviate fi
