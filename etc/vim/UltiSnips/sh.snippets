@@ -1,0 +1,24 @@
+snippet run "run service" !b
+#!/bin/bash
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+echo "Starting $NAME as `whoami`..."
+echo
+
+exec ${1:...}
+endsnippet
+
+snippet "if file" "if file exist" !b
+if [ -f ${1:filename without quotes} ]; then
+	${2:code}
+fi
+endsnippet
+
+snippet "if not file" "if file exist" !b
+if [ ! -f ${1:filename without quotes} ]; then
+	${2:code}
+fi
+endsnippet

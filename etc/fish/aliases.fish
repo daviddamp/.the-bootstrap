@@ -30,7 +30,8 @@ alias there 'cd (xsel --clipboard)'
 alias vim "vim.athena-py2"
 alias nv "env TERM=xterm-256color nvim"
 
-alias lost "clear; tail -n 52 ~/lost.txt; cat >> ~/lost.txt"
+# alias lost "clear; tail -n 52 ~/lost.txt; cat >> ~/lost.txt"
+alias lost "cat ~/lost.txt; cat >> ~/lost.txt"
 
 # alias privateOn='encfs ~/Dropbox/.private/ ~/Privado'
 # alias privateOff='fusermount -u /home/$USER/Privado'
