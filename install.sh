@@ -7,6 +7,8 @@ else
 	sudo apt-get install python-dev python-pip python3-dev python3-pip git mercurial yakuake xsel xbindkeys aptitude curl htop tree x2goclient unp xvkbd encfs
 fi
 
+ln -sf $(pwd)/scripts/ ~/scripts
+
 # Powerline
 pip3 install --user git+git://github.com/Lokaltog/powerline
 
