@@ -1,3 +1,10 @@
+snippet bash "bash script" !b
+#!/usr/bin/env bash
+
+set -e
+
+endsnippet
+
 snippet run "run service" !b
 #!/bin/bash
 
@@ -9,6 +16,10 @@ echo "Starting $NAME as `whoami`..."
 echo
 
 exec ${1:...}
+endsnippet
+
+snippet "go up" "change dir to parent" !b
+cd "$(dirname "\$0")/.."
 endsnippet
 
 snippet "if file" "if file exist" !b

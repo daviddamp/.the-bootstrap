@@ -44,3 +44,8 @@ alias ducks='du -cks * | sort -rn | head'
 # Find and remove *.pyc
 # http://stackoverflow.com/questions/785519/how-do-i-remove-all-pyc-files-from-a-project
 alias pycdel='find . -name \*.pyc -delete'
+
+alias initpy='touch __init__.py'
+function mkpy
+    mkdir "$argv"; and touch $argv/__init__.py
+end
