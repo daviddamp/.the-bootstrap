@@ -16,6 +16,11 @@ set PATH $PATH $HOME/bin $HOME/.local/bin /snap/bin
 
 set LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64/ /usr/local/cuda-9.0/lib64
 
+if test -e /usr/lib/jvm/java-8-openjdk-amd64/
+    set JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
+    export JAVA_HOME
+end
+
 # Anaconda
 set PATH $PATH $HOME/Programas/anaconda3/bin/
 source $HOME/Programas/anaconda3/etc/fish/conf.d/conda.fish

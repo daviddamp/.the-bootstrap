@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # pre-commit.sh
 #
 # Based on http://codeinthehole.com/tips/tips-for-using-a-git-pre-commit-hook/
