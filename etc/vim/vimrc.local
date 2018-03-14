@@ -75,6 +75,12 @@ let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/UltiSnips', 'UltiSnips']
 " Bash (disable fi -> if)
 autocmd FileType sh silent! unabbreviate fi
 
+" Markdown
+augroup vimrc-markdown
+  autocmd!
+  autocmd FileType markdown setlocal wrap wm=2 textwidth=80 fo+=t
+augroup END
+
 " Python (disable vim-bootstrap config)
 augroup vimrc-python
   autocmd!
