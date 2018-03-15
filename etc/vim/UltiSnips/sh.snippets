@@ -10,16 +10,30 @@ snippet run "run service" !b
 
 set -e
 
-cd "$(dirname "$0")/.."
+\$NAME="${1:project_name}"
 
-echo "Starting $NAME as `whoami`..."
+cd "$(dirname "\$0")/.."
+
+echo "Starting \$NAME as \`whoami\`..."
 echo
 
-exec ${1:...}
+exec ${2:python3}
 endsnippet
 
 snippet "go up" "change dir to parent" !b
 cd "$(dirname "\$0")/.."
+endsnippet
+
+snippet "if exist" "if exist" !b
+if [ -e ${1:path} ]; then
+	${2:code}
+fi
+endsnippet
+
+snippet "if not exist" "if does not exist" !b
+if [ ! -e ${1:filename} ]; then
+	${2:code}
+fi
 endsnippet
 
 snippet "if file" "if file exist" !b
@@ -43,5 +57,17 @@ endsnippet
 snippet "if not dir" "if path does not exist" !b
 if [ ! -d ${1:path} ]; then
 	${2:code}
+fi
+endsnippet
+
+snippet "if not str" "if string is empty" !b
+if [ -n "${1:$var}" ]; then
+	${2:code}
+fi
+endsnippet
+
+snippet "if str" "if strings are equal" !b
+if [ "${1:$var}" = "${2:value}" ]; then
+	${3:code}
 fi
 endsnippet
