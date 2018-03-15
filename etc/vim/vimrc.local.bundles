@@ -4,6 +4,10 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'terryma/vim-multiple-cursors'
 " Plug 'mipmip/vim-minimap'
 
+" <leader>b ==> windows with list of buffer
+" gb ==> rotate buffers in window
+Plug 'jeetsukumaran/vim-buffergator'
+
 " Swap windows with <Leader>ww
 " Plug 'wesQ3/vim-windowswap'
 
