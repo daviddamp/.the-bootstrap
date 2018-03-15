@@ -1,0 +1,23 @@
+snippet subclass "class inheritance" !b
+class ${1:Name}(${2:Parent}):
+
+    def __init__(self, *args, **kwargs):
+        super(${3:Name}, self).__init__(*args, **kwargs)
+endsnippet
+
+snippet subfunc "class inheritance function" !b
+def ${1:func}(self, *args, **kwargs):
+    super(${2:Name}, self).__init__(*args, **kwargs)
+endsnippet
+
+snippet main "main" !b
+def main():
+	import sys
+
+
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())
+endsnippet
