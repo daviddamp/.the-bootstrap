@@ -61,7 +61,13 @@ fi
 endsnippet
 
 snippet "if not str" "if string is empty" !b
-if [ -n "${1:$var}" ]; then
+if [ -z "${1:$var}" ]; then
+	${2:code}
+fi
+endsnippet
+
+snippet "if def" "if defined" !b
+if [ ! -z "${1:$var}" ]; then
 	${2:code}
 fi
 endsnippet
