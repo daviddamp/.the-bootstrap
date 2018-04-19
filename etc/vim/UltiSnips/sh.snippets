@@ -77,3 +77,15 @@ if [ "${1:$var}" = "${2:value}" ]; then
 	${3:code}
 fi
 endsnippet
+
+snippet "if grep" "if grep" !b
+if grep --quiet ${1:PATTERN} ${2:FILE}; then
+	${3:CODE}
+fi
+endsnippet
+
+snippet	"for find" "iterate over find files" !b
+find . -type f -iname "${1:*.txt}" -print0 | while IFS= read -r -d $'\0' file_path; do
+    ${2:echo} "$file_path"
+done
+endsnippet
