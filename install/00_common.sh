@@ -18,6 +18,12 @@ else
     echo "==> ${RED}ERROR: OS not supported! The supported systems are: Ubuntu|OpenSuse${END}"
 fi
 
+echo "==> ${LBLUE}Updating pip2…${END}"
+sudo pip2 install --upgrade pip
+
+echo "==> ${LBLUE}Updating pip3…${END}"
+sudo pip3 install --upgrade pip
+
 echo "==> ${LBLUE}Installing Python 2 dependencies…${END}"
 cat requirements/pip2.txt | grep -v '^#' | while IFS= read package; do
     echo "--> ${LYELLOW}${package}${END}…"
