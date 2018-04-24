@@ -1,20 +1,38 @@
-# .the-bootstrap
+.the-bootstrap
+==============
+
 Personal configuration.
 
-## Installation
+Installation
+------------
 
 ```bash
 cd
 git clone https://github.com/cristobalcl/.the-bootstrap.git
-.the-bootstrap/install.sh
+.the-bootstrap/bootstrap.sh
 ```
-## Quick installation for servers
+
+Features
+--------
+
+For (K)ubuntu and OpenSuse (experimental).
+
+### Bash
+
+### Fish
+
+### Vim & NeoVim
+
+Appendix
+--------
+
+### Quick installation for servers
 
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/cristobalcl/.the-bootstrap/master/quick-install-server.sh)
 ```
 
-## Really quick copy/paste Bash configuration
+### Really quick copy&paste Bash configuration
 
 ```bash
 export PS1="\[\033[1;34m\]\u@\H \[\033[1;33m\]\w\[\033[0m\]\$ "
@@ -30,3 +48,7 @@ alias -- ,='cd -'
 alias -- +='pushd .'
 alias -- -='popd'
 ```
+
+### References
+
+- [dotfiles](https://dotfiles.github.io/)

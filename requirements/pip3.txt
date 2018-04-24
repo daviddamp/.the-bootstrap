@@ -1,0 +1,3 @@
+git+git://github.com/powerline/powerline
+yapf
+howdoi

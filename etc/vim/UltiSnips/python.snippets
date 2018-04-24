@@ -25,3 +25,36 @@ def main():
 if __name__ == '__main__':
     sys.exit(main())
 endsnippet
+
+snippet paramparse "parse program parameters" !b
+import argparse
+
+
+__VERSION__ = '0.0.1'
+
+
+def run(args):
+    print(args.option)
+
+
+def args_parse():
+    parser = argparse.ArgumentParser(description='Program description.')
+    parser.add_argument('--version', action='version', version=__VERSION__)
+    subparsers = parser.add_subparsers(dest='parser')
+    subparsers.required = True
+
+    run_parser = subparsers.add_parser('run')
+    run_parser.add_argument('param1', help='param one')
+    run_parser.add_argument('param2', help='param two')
+    run_parser.add_argument('-o', '--option', required=False, default='value',
+                            help='option')
+    run_parser.set_defaults(func=run)
+
+    return parser.parse_args()
+
+def main()
+    args = args_parse()
+    args.func(args)
+
+	return 0
+endsnippet

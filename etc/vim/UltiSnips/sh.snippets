@@ -60,6 +60,12 @@ if [ ! -d ${1:path} ]; then
 fi
 endsnippet
 
+snippet "if not zero" "if value is not zero" !b
+if [ ${1:$var} -ne 0 ]; then
+	${2:code}
+fi
+endsnippet
+
 snippet "if not str" "if string is empty" !b
 if [ -z "${1:$var}" ]; then
 	${2:code}
@@ -72,7 +78,7 @@ if [ ! -z "${1:$var}" ]; then
 fi
 endsnippet
 
-snippet "if str" "if strings are equal" !b
+snippet "if equal" "if strings are equal" !b
 if [ "${1:$var}" = "${2:value}" ]; then
 	${3:code}
 fi
