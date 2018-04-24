@@ -8,7 +8,7 @@ source lib/colors.sh
 
 if grep --quiet '^ID=ubuntu' /etc/os-release; then
     echo "==> ${LBLUE}Updating system…${END}"
-    sudo apt update && sudo apt install aptitude
+    sudo apt update && sudo apt install aptitude -y
     sudo aptitude safe-upgrade -y
     echo "==> ${LBLUE}Installing Ubuntu dependencies…${END}"
     cat requirements/apt.txt | grep -v '^#' | sudo xargs aptitude install -y

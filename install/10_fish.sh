@@ -12,7 +12,7 @@ if grep --quiet '^ID=ubuntu' /etc/os-release; then
         sudo apt-add-repository ppa:fish-shell/release-2
         sudo apt-get update
     fi
-    sudo apt-get install fish
+    sudo apt-get install fish -y
 elif grep --quiet '^ID=opensuse' /etc/os-release; then
 	sudo zypper install fish
 else
