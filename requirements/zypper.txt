@@ -1,0 +1,16 @@
+git
+python-devel
+python3-devel
+xbindkeys
+curl
+htop
+tree
+xsel
+Yakuake
+file-unpack
+xvkbd
+encfs
+# NeoVim
+Neovim
+python-neovim
+python3-neovim

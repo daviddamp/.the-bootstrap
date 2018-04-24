@@ -1,8 +1,8 @@
-# Call with:
+# Install with:
 # $ bash <(curl -s https://raw.githubusercontent.com/cristobalcl/.the-bootstrap/master/quick-install-server.sh)
 
 # Bashrc
-if ! grep --quiet 'By the-bootstrap:' ~/.bashrc ; then
+if ! grep --quiet '^# By the-bootstrap:' ~/.bashrc ; then
 	cat >> ~/.bashrc << EOF
 
 # By the-bootstrap:
@@ -21,7 +21,8 @@ alias -- -='popd'
 EOF
 fi
 
-cat > ~/.screenrc << EOF
+if [ ! -f ~/.screenrc ]; then
+    cat > ~/.screenrc << EOF
 startup_message off
 altscreen on
 term screen-256color
@@ -48,3 +49,4 @@ bindkey -k k7 remove
 bindkey -k k8 detach
 bindkey -k k9 quit
 EOF
+fi
