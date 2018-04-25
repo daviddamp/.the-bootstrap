@@ -12,6 +12,16 @@ sudo apt update && sudo apt install git && cd && \
     .the-bootstrap/bootstrap.sh
 ```
 
+### Other steps
+
+- Install recommended drivers: `ALT + F2` -> `kcmshell5 kcm_driver_manager`
+- Open Yakuake: `ALT + F2` -> `yakuake`
+- Open Dropbox: `ALT + F2` -> `dropbox`
+- Create ssh keys: `ssh-keygen -t rsa -b 4096 -C "ccarnerolinan@gmail.com"`
+- Start `ssh-agent`: `eval "$(ssh-agent -s)"`
+- Add ssh key: `ssh-add ~/.ssh/id_rsa`
+- Configure new key in [GitHub](https://github.com/settings/ssh/new)
+
 Features
 --------
 
