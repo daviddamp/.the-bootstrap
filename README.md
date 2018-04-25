@@ -57,6 +57,8 @@ To activate run the script like this:
 TB_NVIDIA=true .the-bootstrap/bootstrap.sh
 ```
 
+### Scripts
+
 Appendix
 --------
 
@@ -86,3 +88,13 @@ alias -- -='popd'
 ### References
 
 - [dotfiles](https://dotfiles.github.io/)
+
+Troubleshooting
+---------------
+
+### Glitches around mouse pointer in Kubuntu with NVIDIA
+
+1. Install latest NVIDIA driver.
+2. Go to `System setting -> Display and Monitor -> Compositor -> Rendering Backend` and change OpenGL 2.0 to XRender.
+
+Source: [Ubuntu Forums](https://ubuntuforums.org/showthread.php?t=2358926&s=a0573c29ff5f56dff90cf77418efa722&p=13679079#post13679079)
