@@ -1,28 +1,38 @@
+software-properties-common
 build-essential
+
+# Source Code Control Systems
 git
 mercurial
+
+# Python
 python-dev
 python-pip
 python3-dev
 python3-pip
 python3-virtualenv
+
 curl
+wget
 htop
 tree
 xsel
 xbindkeys
+unp
+xvkbd
+# encfs
+libxml2-utils
+
 yakuake
 snapd
 # x2goclient
-unp
-xvkbd
-encfs
+
+# We'll use nerd-fonts instead of this:
+# fonts-powerline
+
 # Vim
 vim
 vim-athena-py2
-# NeoVim
-neovim
-python-neovim
-python3-neovim
+
 # Music On Console Player
 moc

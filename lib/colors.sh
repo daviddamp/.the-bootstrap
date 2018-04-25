@@ -2,7 +2,7 @@
 END=$(echo -en '\e[0m')
 RED=$(echo -en '\e[00;31m')
 GREEN=$(echo -en '\e[00;32m')
-YELLOW=$(echo -en '\e[00;33m')
+BROWN=$(echo -en '\e[00;33m')
 BLUE=$(echo -en '\e[00;34m')
 MAGENTA=$(echo -en '\e[00;35m')
 PURPLE=$(echo -en '\e[00;35m')

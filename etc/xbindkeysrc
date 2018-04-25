@@ -44,7 +44,12 @@
     m:0x8 + c:28
     Alt + t
 
+# Insert date and time shorter
+"xvkbd -xsendevent -text `date +%Y%m%d%H%M`"
+    Alt + n
+
 # Insert random password
-"xvkbd -xsendevent -text `echo $RANDOM | sha256sum | base64 | head -c 8`"
+# https://unix.stackexchange.com/a/230676
+"xvkbd -xsendevent -text `head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo ''`"
     m:0x8 + c:33
     Alt + p

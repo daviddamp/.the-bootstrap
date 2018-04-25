@@ -4,6 +4,7 @@ set -e
 
 cd "$(dirname "$0")/.."
 
+source lib/files.sh
 source lib/colors.sh
 
 echo "==> ${LBLUE}Installing Fish…${END}"
@@ -21,11 +22,12 @@ else
 fi
 
 echo "==> ${LBLUE}Linking Fish configuration…${END}"
-mkdir -p ~/.config/fish
-ln -sf $(pwd)/etc/fish/* ~/.config/fish
+directory ~/.config/fish
+linked $(pwd)/etc/fish/aliases.fish ~/.config/fish/aliases.fish
+linked $(pwd)/etc/fish/config.fish ~/.config/fish/config.fish
 
 echo "==> ${LBLUE}Installing Fisherman…${END}"
-mkdir -p ~/.config/fish/functions
+directory ~/.config/fish/functions
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 
 echo "==> ${LBLUE}Installing Fisherman dependencies…${END}"
