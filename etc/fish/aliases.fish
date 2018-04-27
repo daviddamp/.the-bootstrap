@@ -9,7 +9,9 @@ alias , "cd -"
 abbr -a -- + 'pushd .'
 abbr -a -- - 'popd'
 
-# function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+function mkcd
+    mkdir "$argv"; and cd "$argv"
+end
 
 # ? () { echo "$*" | bc -l; }
 function =
@@ -27,6 +29,7 @@ alias there 'cd (xsel --clipboard)'
 # alias vim "env TERM=xterm-256color vim -p"
 # alias vims "env TERM=xterm-256color vim.athena-py2 -S Session.vim"
 # alias vim "env TERM=xterm-256color vim.athena-py2 -p"
+alias vi "vim.athena-py2 -u NONE"
 alias vim "vim.athena-py2"
 alias nv "env TERM=xterm-256color nvim"
 
@@ -52,3 +55,16 @@ alias initpy='touch __init__.py'
 function mkpy
     mkdir "$argv"; and touch $argv/__init__.py
 end
+
+# git
+alias g 'git'
+alias gi 'git init'
+alias gs 'git status -u'
+alias gd 'git diff'
+alias ga 'git add .'
+abbr -a gc 'git commit -am'
+abbr -a gp 'git push'
+alias gpom 'git push -u origin master'
+alias gc 'git checkout'
+abbr -a gcb 'git checkout -b'
+abbr -a gm 'git merge --no-ff'

@@ -12,8 +12,8 @@ function fish_greeting
 	echo (lsb_release -s -d) "|" (lsb_release -s -r) (lsb_release -s -c)
 	# uptime
     echo
-    set BOOK (~/bin/packt_offer.sh)
-    echo "Today's Packt free ebook: $BOOK"
+    ~/bin/packt_offer.sh full
+    echo
 	set_color normal
 end
 

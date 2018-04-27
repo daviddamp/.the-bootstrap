@@ -24,6 +24,10 @@ snippet "go up" "change dir to parent" !b
 cd "$(dirname "\$0")/.."
 endsnippet
 
+snippet "go up ln" "change dir to parent through symlinks" !b
+cd "$(dirname "$(readlink -f "$0")")/.."
+endsnippet
+
 snippet "if exist" "if exist" !b
 if [ -e ${1:path} ]; then
 	${2:code}
