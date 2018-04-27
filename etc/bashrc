@@ -63,6 +63,7 @@ alias there='cd "`xsel --clipboard`"'
 
 # alias vims='TERM=xterm-256color vim -S Session.vim'
 # alias vim='TERM=xterm-256color vim -p'
+alias vi="vim.athena-py2 -u NONE"
 alias vims='TERM=xterm-256color vim.athena-py2 -S Session.vim'
 alias vim='TERM=xterm-256color vim.athena-py2 -p'
 alias nv='nvim -u ~/.nvimrc -p'
