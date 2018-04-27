@@ -102,9 +102,29 @@ alias -- -='popd'
 Troubleshooting
 ---------------
 
+### Ethernet network not working after Kubuntu 16.04 install
+
+Install Kubuntu again without connecting the cable :(
+
 ### Glitches around mouse pointer in Kubuntu with NVIDIA
 
 1. Install latest NVIDIA driver.
 2. Go to `System setting -> Display and Monitor -> Compositor -> Rendering Backend` and change OpenGL 2.0 to XRender.
 
 Source: [Ubuntu Forums](https://ubuntuforums.org/showthread.php?t=2358926&s=a0573c29ff5f56dff90cf77418efa722&p=13679079#post13679079)
+
+### Docker permission denied
+
+Full error message:
+
+```
+docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.37/containers/create: dial unix /var/run/docker.sock: connect: permission denied.
+```
+
+Solution:
+
+```bash
+sudo usermod -a -G docker $USER
+```
+
+Source: [Techoverflow](https://techoverflow.net/2017/03/01/solving-docker-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket/)
