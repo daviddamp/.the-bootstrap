@@ -19,6 +19,9 @@ tree
 xsel
 xbindkeys
 unp
+zip
+unzip
+unrar
 xvkbd
 # encfs
 libxml2-utils
