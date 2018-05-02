@@ -51,6 +51,10 @@ alias ducks='du -cks * | sort -rn | head'
 # http://stackoverflow.com/questions/785519/how-do-i-remove-all-pyc-files-from-a-project
 alias pycdel='find . -name \*.pyc -delete'
 
+alias mkenv="virtualenv -p python3 .env"
+alias ienv="source .env/bin/activate.fish"
+alias oenv="deactivate"
+
 alias initpy='touch __init__.py'
 function mkpy
     mkdir "$argv"; and touch $argv/__init__.py
@@ -68,3 +72,12 @@ alias gpom 'git push -u origin master'
 alias gc 'git checkout'
 abbr -a gcb 'git checkout -b'
 abbr -a gm 'git merge --no-ff'
+
+# Deepo
+abbr -a deepo "nvidia-docker run --rm ufoym/deepo"
+alias jupyter "nvidia-docker run -it -p 8888:8888 ufoym/deepo:all-py36-jupyter jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/root'"
+alias juplab "nvidia-docker run -it -p 8888:8888 \
+    --mount type=bind,source=\"(pwd)/notebooks\"/,target=/notebooks \
+    --mount type=bind,source=\"(pwd)/datsets\"/,target=/datasets \
+    ufoym/deepo \
+    bash -c 'pip install jupyterlab && KERAS_BACKEND=theano jupyter lab --ip 0.0.0.0 --port 8888 --allow-root'"

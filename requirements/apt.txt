@@ -1,4 +1,6 @@
+apt-transport-https
 software-properties-common
+ca-certificates
 build-essential
 
 # Source Code Control Systems
@@ -10,7 +12,7 @@ python-dev
 python-pip
 python3-dev
 python3-pip
-python3-virtualenv
+virtualenv
 
 curl
 wget
@@ -39,3 +41,6 @@ vim-athena-py2
 
 # Music On Console Player
 moc
+
+# VLC
+vlc
