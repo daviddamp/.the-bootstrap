@@ -121,10 +121,12 @@ Full error message:
 docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.37/containers/create: dial unix /var/run/docker.sock: connect: permission denied.
 ```
 
-Solution:
+Solution (this is doing in the bootstrap script):
 
 ```bash
 sudo usermod -a -G docker $USER
 ```
+
+Then reboot.
 
 Source: [Techoverflow](https://techoverflow.net/2017/03/01/solving-docker-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket/)
