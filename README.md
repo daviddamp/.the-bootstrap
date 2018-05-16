@@ -7,6 +7,10 @@ Installation
 ------------
 
 ```bash
+# Use with caution:
+export TB_RECOMMENDED_DRIVERS=true
+export TB_NVIDIA=true
+
 sudo apt update && sudo apt install git && cd && \
     git clone https://github.com/cristobalcl/.the-bootstrap.git &&
     .the-bootstrap/bootstrap.sh
@@ -14,9 +18,10 @@ sudo apt update && sudo apt install git && cd && \
 
 ### Other steps
 
-- Install recommended drivers: `ALT + F2` -> `kcmshell5 kcm_driver_manager`
-- Open Yakuake: `ALT + F2` -> `yakuake`
-- Open Dropbox: `ALT + F2` -> `dropbox`
+- Reboot?
+- Install recommended drivers (if you didn't with the scripts): `ALT + F2` -> `kcmshell5 kcm_driver_manager`
+- Launch Yakuake: `ALT + F2` -> `yakuake`
+- Launch Dropbox: `ALT + F2` -> `dropbox`
 - Create ssh keys: `ssh-keygen -t rsa -b 4096 -C "ccarnerolinan@gmail.com"`
 - Start `ssh-agent`: `eval "$(ssh-agent -s)"`
 - Add ssh key: `ssh-add ~/.ssh/id_rsa`
@@ -25,7 +30,13 @@ sudo apt update && sudo apt install git && cd && \
 Features
 --------
 
-For (K)ubuntu and OpenSuse (experimental).
+For (K)ubuntu (tested on 16.04) and OpenSuse (experimental).
+
+### Install recommended drivers
+
+```bash
+TB_RECOMMENDED_DRIVERS=true .the-bootstrap/bootstrap.sh
+```
 
 ### Bash & Fish
 
@@ -66,6 +77,10 @@ To activate run the script like this:
 ```bash
 TB_NVIDIA=true .the-bootstrap/bootstrap.sh
 ```
+
+### Dropbox
+
+### Spotify
 
 ### Scripts
 
@@ -121,7 +136,7 @@ Full error message:
 docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.37/containers/create: dial unix /var/run/docker.sock: connect: permission denied.
 ```
 
-Solution (this is doing in the bootstrap script):
+Solution (this is done by the bootstrap script):
 
 ```bash
 sudo usermod -a -G docker $USER

@@ -56,5 +56,58 @@ def main()
     args = args_parse()
     args.func(args)
 
-	return 0
+    return 0
+endsnippet
+
+snippet "thread class" "thread class" !b
+import time
+import threading
+import Thread
+
+
+stop_event = threading.Event()
+
+
+class MyThread(Thread):
+    def __init__(self, group=None, target=None, name=None, *args, **kwargs):
+        super(MyThread, self).__init__(group=group, target=target,
+                                       name=name)
+        self.args = args
+        self.kwargs = kwargs
+
+    def run(self):
+        print(self.args)
+        print(self.kwargs)
+
+        while not stop_event.is_set():
+            time.sleep(5)
+
+
+my_thread = MyThread()
+my_thread.start()
+
+# stop_event.set()
+
+my_thread.join()
+endsnippet
+
+snippet "thread func" "thread function" !b
+import time
+import threading
+
+
+stop_event = threading.Event()
+
+
+def thread_func():
+    while not stop_event.is_set():
+        time.sleep(5)
+
+
+my_thread = threading.Thread(target=thread_func)
+my_thread.start()
+
+# stop_event.set()
+
+my_thread.join()
 endsnippet
