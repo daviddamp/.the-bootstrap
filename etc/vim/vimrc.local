@@ -84,13 +84,13 @@ augroup END
 " Python (disable vim-bootstrap config)
 augroup vimrc-python
   autocmd!
+  autocmd FileType python setlocal iskeyword-=.,#
 augroup END
 
 " TypeScript
 augroup vimrc-typescript
   autocmd!
-  autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-  autocmd FileType javascript setlocal iskeyword-=.,#
+  autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab iskeyword-=.,#
 augroup END
 
 " Javascript

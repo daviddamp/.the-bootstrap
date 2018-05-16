@@ -18,6 +18,10 @@ function =
 	echo "$argv" | bc -l
 end
 
+function install_deb
+    sudo dpkg -i "$argv"; and sudo apt-get -f install -y
+end
+
 alias today "date +%F"
 # alias pylab='ipython -pylab'
 # alias wcat='wget -qO-'
@@ -75,9 +79,3 @@ abbr -a gm 'git merge --no-ff'
 
 # Deepo
 abbr -a deepo "nvidia-docker run --rm ufoym/deepo"
-alias jupyter "nvidia-docker run -it -p 8888:8888 ufoym/deepo:all-py36-jupyter jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/root'"
-alias juplab "nvidia-docker run -it -p 8888:8888 \
-    --mount type=bind,source=\"(pwd)/notebooks\"/,target=/notebooks \
-    --mount type=bind,source=\"(pwd)/datsets\"/,target=/datasets \
-    ufoym/deepo \
-    bash -c 'pip install jupyterlab && KERAS_BACKEND=theano jupyter lab --ip 0.0.0.0 --port 8888 --allow-root'"
