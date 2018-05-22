@@ -7,12 +7,11 @@ endsnippet
 
 snippet subfunc "class inheritance function" !b
 def ${1:func}(self, *args, **kwargs):
-    super(${2:Name}, self).__init__(*args, **kwargs)
+    super(${2:Name}, self).${3:func}(*args, **kwargs)
 endsnippet
 
 snippet main "main" !b
 #!/usr/bin/env python3
-
 
 import sys
 
@@ -110,4 +109,8 @@ my_thread.start()
 # stop_event.set()
 
 my_thread.join()
+endsnippet
+
+snippet timestamp "get timestamp"
+int(round(time.time() * 1000.0))
 endsnippet
