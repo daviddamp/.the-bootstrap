@@ -46,8 +46,10 @@ def args_parse():
     run_parser = subparsers.add_parser('run')
     run_parser.add_argument('param1', help='param one')
     run_parser.add_argument('param2', help='param two')
-    run_parser.add_argument('-o', '--option', required=False, default='value',
-                            help='option')
+    run_parser.add_argument('-o', '--option', required=False, default=0,
+                            type=int, help='option')
+    run_parser.add_argument('--verbose', required=False, default=False,
+                            action='store_true',
     run_parser.set_defaults(func=run)
 
     return parser.parse_args()
