@@ -37,7 +37,8 @@ def run(args):
 
 
 def args_parse():
-    parser = argparse.ArgumentParser(description='Program description.')
+    parser = argparse.ArgumentParser(prog='program_name',
+                                     description='Program description.')
     parser.add_argument('--version', action='version', version=__VERSION__)
     subparsers = parser.add_subparsers(dest='parser')
     subparsers.required = True
@@ -51,7 +52,7 @@ def args_parse():
 
     return parser.parse_args()
 
-def main()
+def main():
     args = args_parse()
     args.func(args)
 
@@ -113,4 +114,18 @@ endsnippet
 
 snippet timestamp "get timestamp"
 int(round(time.time() * 1000.0))
+endsnippet
+
+snippet "find func" "find files func" !b
+import os
+import fnmatch
+
+def find(pattern, path):
+    result = []
+    for root, dirs, files in os.walk(path):
+        for name in files:
+            if fnmatch.fnmatch(name, pattern):
+                result.append(os.path.join(root, name))
+
+    return result
 endsnippet
