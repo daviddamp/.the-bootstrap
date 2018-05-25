@@ -26,7 +26,7 @@ alias today "date +%F"
 # alias pylab='ipython -pylab'
 # alias wcat='wget -qO-'
 
-alias here "pwd | xsel --clipboard"
+alias here "printf (pwd) | xsel --clipboard"
 alias there 'cd (xsel --clipboard)'
 
 # alias vims "env TERM=xterm-256color vim -S Session.vim"
