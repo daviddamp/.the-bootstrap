@@ -172,8 +172,8 @@ map . .`[
 " Copy&Paste from clipboard
 set clipboard+=unnamedplus
 
-" Paste without yank
-vnoremap <leader>p pgvy
+" Paste yank
+vnoremap <leader>p "0p
 
 " Run macro 'q'
 nnoremap QQ @q
