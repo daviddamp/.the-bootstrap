@@ -58,7 +58,7 @@ alias today='date +%F'
 alias pylab='ipython -pylab'
 alias wcat='wget -qO-'
 
-alias here='pwd | xsel --clipboard'
+alias here='printf `pwd`  | xsel --clipboard'
 alias there='cd "`xsel --clipboard`"'
 
 # alias vims='TERM=xterm-256color vim -S Session.vim'
@@ -66,7 +66,7 @@ alias there='cd "`xsel --clipboard`"'
 alias vi="vim.athena-py2 -u NONE"
 alias vims='TERM=xterm-256color vim.athena-py2 -S Session.vim'
 alias vim='TERM=xterm-256color vim.athena-py2 -p'
-alias nv='nvim -u ~/.nvimrc -p'
+alias nv='env TERM=xterm-256color nvim -p'
 
 alias lost='clear; tail -n 52 ~/lost.txt; (cat >> ~/lost.txt)'
 

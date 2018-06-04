@@ -7,12 +7,11 @@ endsnippet
 
 snippet subfunc "class inheritance function" !b
 def ${1:func}(self, *args, **kwargs):
-    super(${2:Name}, self).__init__(*args, **kwargs)
+    super(${2:Name}, self).${3:func}(*args, **kwargs)
 endsnippet
 
 snippet main "main" !b
 #!/usr/bin/env python3
-
 
 import sys
 
@@ -38,7 +37,8 @@ def run(args):
 
 
 def args_parse():
-    parser = argparse.ArgumentParser(description='Program description.')
+    parser = argparse.ArgumentParser(prog='program_name',
+                                     description='Program description.')
     parser.add_argument('--version', action='version', version=__VERSION__)
     subparsers = parser.add_subparsers(dest='parser')
     subparsers.required = True
@@ -46,15 +46,88 @@ def args_parse():
     run_parser = subparsers.add_parser('run')
     run_parser.add_argument('param1', help='param one')
     run_parser.add_argument('param2', help='param two')
-    run_parser.add_argument('-o', '--option', required=False, default='value',
-                            help='option')
+    run_parser.add_argument('-o', '--option', required=False, default=0,
+                            type=int, help='option')
+    run_parser.add_argument('--verbose', required=False, default=False,
+                            action='store_true',
     run_parser.set_defaults(func=run)
 
     return parser.parse_args()
 
-def main()
+def main():
     args = args_parse()
     args.func(args)
 
-	return 0
+    return 0
+endsnippet
+
+snippet "thread class" "thread class" !b
+import time
+import threading
+import Thread
+
+
+stop_event = threading.Event()
+
+
+class MyThread(Thread):
+    def __init__(self, group=None, target=None, name=None, *args, **kwargs):
+        super(MyThread, self).__init__(group=group, target=target,
+                                       name=name)
+        self.args = args
+        self.kwargs = kwargs
+
+    def run(self):
+        print(self.args)
+        print(self.kwargs)
+
+        while not stop_event.is_set():
+            time.sleep(5)
+
+
+my_thread = MyThread()
+my_thread.start()
+
+# stop_event.set()
+
+my_thread.join()
+endsnippet
+
+snippet "thread func" "thread function" !b
+import time
+import threading
+
+
+stop_event = threading.Event()
+
+
+def thread_func():
+    while not stop_event.is_set():
+        time.sleep(5)
+
+
+my_thread = threading.Thread(target=thread_func)
+my_thread.start()
+
+# stop_event.set()
+
+my_thread.join()
+endsnippet
+
+snippet timestamp "get timestamp"
+int(round(time.time() * 1000.0))
+endsnippet
+
+snippet "find func" "find files func" !b
+import os
+import fnmatch
+
+def find(pattern, path):
+    result = []
+    for root, dirs, files in os.walk(path):
+        for name in files:
+            if fnmatch.fnmatch(name, pattern):
+                result.append(os.path.join(root, name))
+
+    return result
 endsnippet
