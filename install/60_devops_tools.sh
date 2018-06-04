@@ -7,7 +7,7 @@ cd "$(dirname "$0")/.."
 source lib/files.sh
 source lib/colors.sh
 
-if command -v ansible &> /dev/null; then
+if ! command -v ansible &> /dev/null; then
     echo "==> ${LBLUE}Adding Ansible repository…${END}"
     sudo apt-add-repository ppa:ansible/ansible
     sudo apt-get update
@@ -16,7 +16,7 @@ if command -v ansible &> /dev/null; then
     sudo apt-get install ansible
 fi
 
-if command -v vagrant &> /dev/null; then
+if ! command -v vagrant &> /dev/null; then
     VAG_VERSION=`curl -L https://releases.hashicorp.com/vagrant/ 2> /dev/null | grep -m 1 'vagrant_' | grep -oh -m 1 '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -n 1`
 
     echo "==> ${LBLUE}Downloading Vagrant ${VAG_VERSION}…${END}"
@@ -27,7 +27,18 @@ if command -v vagrant &> /dev/null; then
     rm /tmp/vagrant.deb
 fi
 
-if command -v terraform &> /dev/null; then
+if ! command -v packer &> /dev/null; then
+    PAC_VERSION=`curl -L https://releases.hashicorp.com/packer/ 2> /dev/null | grep -m 1 'packer_' | grep -oh -m 1 '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -n 1`
+
+    echo "==> ${LBLUE}Downloading Packer ${PAC_VERSION}…${END}"
+    download "https://releases.hashicorp.com/packer/${PAC_VERSION}/packer_${PAC_VERSION}_linux_amd64.zip" /tmp/packer.zip
+
+    echo "==> ${LBLUE}Installing Packer ${PAC_VERSION}…${END}"
+    unzip /tmp/packer.zip -d ~/bin/
+    rm /tmp/packer.zip
+fi
+
+if ! command -v terraform &> /dev/null; then
     TER_VERSION=`curl -L https://releases.hashicorp.com/terraform/ 2> /dev/null | grep -m 1 'terraform_' | grep -oh -m 1 '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -n 1`
 
     echo "==> ${LBLUE}Downloading Terraform ${TER_VERSION}…${END}"
