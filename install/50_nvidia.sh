@@ -26,6 +26,14 @@ if lspci | grep -q -i nvidia; then
                   sudo tee /etc/apt/sources.list.d/nvidia-docker.list
                 sudo apt-get update
 
+                if [ ! -z "${TB_RECOMMENDED_DRIVERS}" ]; then
+                    echo "==> ${BROWN}Autoinstalling Ubuntu drivers!${END}"
+                    sudo ubuntu-drivers autoinstall
+                elif
+                    echo "==> ${BROWN}Warning! Set \$TB_RECOMMENDED_DRIVERS to autoinstall drivers. Skipping!${END}"
+                    echo "    Or run this by yourself: ${LRED}sudo ubuntu-drivers autoinstall${END}"
+                fi
+
                 echo "==> ${LBLUE}Installing NVIDIA docker…${END}"
                 sudo apt-get install -y nvidia-docker2
                 echo "==> ${LBLUE}Reload docker configuration…${END}"
