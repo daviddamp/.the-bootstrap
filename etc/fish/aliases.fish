@@ -51,6 +51,9 @@ alias lost "cat ~/lost.txt; cat >> ~/lost.txt"
 alias ducks='du -cks * | sort -rn | head'
 # alias unp 'file-unpack'
 
+# Disk ussage for each directory with depth=1
+alias dud='du . -hd1'
+
 # Find and remove *.pyc
 # http://stackoverflow.com/questions/785519/how-do-i-remove-all-pyc-files-from-a-project
 alias pycdel='find . -name \*.pyc -delete'

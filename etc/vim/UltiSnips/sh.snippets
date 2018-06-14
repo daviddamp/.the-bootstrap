@@ -70,6 +70,12 @@ if [ ${1:$var} -ne 0 ]; then
 fi
 endsnippet
 
+snippet "if str" "if string is equal" !b
+if [[ "${1:$var}" == "${2:text}" ]]; then
+	${3:code}
+fi
+endsnippet
+
 snippet "if not str" "if string is empty" !b
 if [ -z "${1:$var}" ]; then
 	${2:code}

@@ -28,3 +28,10 @@ if ! command -v docker &> /dev/null; then
         fi
     fi
 fi
+
+if ! command -v docker-compose &> /dev/null; then
+    DC_VERSION=`curl https://github.com/docker/compose/releases/ 2> /dev/null | grep '/download/' | head -n 1 | grep -oh -m 1 '[0-9]\+\.[0-9]\+\.[0-9]\+'`
+    echo "==> ${LBLUE}Installing docker-compose ${DC_VERSION}…${END}"
+    curl -L https://github.com/docker/compose/releases/download/${DC_VERSION}/docker-compose-$(uname -s)-$(uname -m) -o ~/bin/docker-compose
+    chmod +x ~/bin/docker-compose
+fi
