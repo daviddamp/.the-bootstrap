@@ -105,6 +105,9 @@ nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 " Center line
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
+" Wrap lines
+nnoremap wr gqG
+
 if has('nvim')
 	tnoremap <A-Left> <C-\><C-n><C-w>h
 	tnoremap <A-Down> <C-\><C-n><C-w>j
