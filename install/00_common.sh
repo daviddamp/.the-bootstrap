@@ -19,6 +19,13 @@ else
     echo "==> ${RED}ERROR: OS not supported! The supported systems are: Ubuntu|OpenSuse${END}"
 fi
 
+echo "==> ${LBLUE}Installing Debian packages dependencies…${END}"
+cat requirements/deb.txt | grep -v '^#' | grep -v -e '^[[:space:]]*$' | while IFS= read package; do
+    echo "--> ${LYELLOW}${package}${END}…"
+    download ${package} /tmp/package.deb
+    sudo dpkg -i /tmp/package.deb
+done
+
 echo "==> ${LBLUE}Updating pip2…${END}"
 sudo pip2 install --upgrade pip
 
