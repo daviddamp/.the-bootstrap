@@ -81,5 +81,5 @@ alias ducks='du -cks * | sort -rn | head'
 alias dud='du . -hd1'
 
 # .the-bootstrap
-alias .tbc='cd ~/.the-bootstrap'
-alias .tbe='cd ~/.the-bootstrap && eval $EDITOR'
+alias .tbcd='cd ~/.the-bootstrap'
+alias .tbed='cd ~/.the-bootstrap && eval $EDITOR'
