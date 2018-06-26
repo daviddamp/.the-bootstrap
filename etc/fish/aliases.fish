@@ -82,3 +82,7 @@ abbr -a gm 'git merge --no-ff'
 
 # Deepo
 abbr -a deepo "nvidia-docker run --rm ufoym/deepo"
+
+# .the-bootstrap
+alias .tbc 'cd ~/.the-bootstrap'
+alias .tbe 'cd ~/.the-bootstrap; and eval $EDITOR'

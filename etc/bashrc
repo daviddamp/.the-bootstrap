@@ -32,7 +32,7 @@ else
     fi
 fi
 
-export EDITOR=vim
+export EDITOR=nv
 
 #set -o vi
 
@@ -79,3 +79,7 @@ alias ducks='du -cks * | sort -rn | head'
 
 # Disk ussage for each directory with depth=1
 alias dud='du . -hd1'
+
+# .the-bootstrap
+alias .tbc='cd ~/.the-bootstrap'
+alias .tbe='cd ~/.the-bootstrap && eval $EDITOR'
