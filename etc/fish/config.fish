@@ -3,7 +3,7 @@
 # Disable copy deleted words to clipboard
 set FISH_CLIPBOARD_CMD "cat"
 
-# set -gx EDITOR vim
+set -gx EDITOR nv
 # set -U EDITOR vim
 
 function fish_greeting
