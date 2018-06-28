@@ -3,3 +3,4 @@ powerline-shell
 neovim
 yapf
 howdoi
+awscli
