@@ -42,3 +42,6 @@ Plug 'laurentgoudet/vim-howdoi'
 
 " Load last
 Plug 'ryanoasis/vim-devicons'
+
+" Tools for Elixir
+" Plugin 'slashmili/alchemist.vim'
