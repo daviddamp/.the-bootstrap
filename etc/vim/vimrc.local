@@ -106,7 +106,7 @@ nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
 " Wrap lines
-nnoremap wr gqG
+nnoremap <Leader>wr gqG
 
 if has('nvim')
 	tnoremap <A-Left> <C-\><C-n><C-w>h
@@ -226,6 +226,8 @@ nnoremap <expr> gV    "`[".getregtype(v:register)[0]."`]"
 " nnoremap <C-w><C-m> <C-w><C-o>
 " nnoremap <C-j> <C-PageUp>
 " nnoremap <C-l> <C-PageDown>
+
+nnoremap <CR> gea<CR><ESC>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spell checker
