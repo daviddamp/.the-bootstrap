@@ -1,0 +1,10 @@
+xsel
+xbindkeys
+xvkbd
+yakuake
+
+# Music On Console Player
+moc
+
+# VLC
+vlc

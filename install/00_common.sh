@@ -58,4 +58,3 @@ directory ~/Proyectos
 ls -1 bin/*.sh | while IFS= read file_path; do
     linked $(pwd)/${file_path} ~/bin/
 done
-
