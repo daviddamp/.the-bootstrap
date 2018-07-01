@@ -23,17 +23,13 @@ curl
 wget
 htop
 tree
-xsel
-xbindkeys
 unp
 zip
 unzip
 unrar
-xvkbd
 # encfs
 libxml2-utils
 
-yakuake
 snapd
 # x2goclient
 
@@ -43,9 +39,3 @@ snapd
 # Vim
 vim
 vim-athena-py2
-
-# Music On Console Player
-moc
-
-# VLC
-vlc
