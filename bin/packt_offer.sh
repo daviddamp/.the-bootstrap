@@ -10,14 +10,14 @@ if [ ! -f $TITLE_CACHE ] || [[ $(find "$TITLE_CACHE" -mmin +720 -print) ]]; then
         grep -v -e '^[[:space:]]*$' | \
         sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')”"
 
-    if [ "$TITLE" = "" ]; then
+    if [ -n "$TITLE" ]; then
         printf "$TITLE" > $TITLE_CACHE
     fi
 else
     TITLE=`cat $TITLE_CACHE`
 fi
 
-if [ "$TITLE" = "" ]; then
+if [ -n "$TITLE" ]; then
     if [ "$1" = "full" ]; then
         cd "$(dirname "$(readlink -f "$0")")/.."
 
