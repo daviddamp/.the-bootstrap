@@ -227,7 +227,7 @@ nnoremap <expr> gV    "`[".getregtype(v:register)[0]."`]"
 " nnoremap <C-j> <C-PageUp>
 " nnoremap <C-l> <C-PageDown>
 
-nnoremap <CR> gea<CR>d^<ESC>
+nnoremap <CR> gea<CR><ESC>d^
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spell checker
