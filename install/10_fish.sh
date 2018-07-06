@@ -36,5 +36,5 @@ cat requirements/fisher.txt | grep -v '^#' | while IFS= read package; do
     fish -c "fisher $package"
 done
 
-# echo "==> ${LBLUE}Making Fish the default shell…${END}"
-# chsh -s `which fish`
+echo "==> ${LBLUE}Making Fish the default shell…${END}"
+chsh -s `which fish`
