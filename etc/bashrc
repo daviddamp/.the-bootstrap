@@ -36,6 +36,8 @@ eval `ssh-agent -s` > /dev/null
 
 export EDITOR=nv
 
+export PYTHONIOENCODING=UTF-8
+
 #set -o vi
 
 shopt -s cdspell

@@ -8,4 +8,4 @@ git config --global user.name "Cristóbal Carnero Liñán"
 cd ~/.the-bootstrap
 
 git remote rm origin
-git remote add remote git@github.com:cristobalcl/.the-bootstrap.git
+git remote add origin git@github.com:cristobalcl/.the-bootstrap.git

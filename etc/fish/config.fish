@@ -6,6 +6,8 @@ set FISH_CLIPBOARD_CMD "cat"
 set -gx EDITOR nv
 # set -U EDITOR vim
 
+set -gx PYTHONIOENCODING UTF-8
+
 function fish_greeting
 	set_color $fish_color_autosuggestion
 	uname -nmsr
@@ -15,6 +17,18 @@ function fish_greeting
     ~/bin/packt_offer.sh full
     echo
 	set_color normal
+end
+
+if test -e $HOME/bin
+    set PATH $PATH $HOME/bin
+end
+
+if test -e $HOME/.local/bin
+    set PATH $PATH $HOME/.local/bin /snap/bin
+end
+
+if test -e /snap/bin
+    set PATH $PATH /snap/bin
 end
 
 if type -q powerline-shell
@@ -28,18 +42,6 @@ else
         set fish_function_path $fish_function_path "$PYTHON3_USER_PATH/powerline/bindings/fish/"
         powerline-setup
     end
-end
-
-if test -e $HOME/bin
-    set PATH $PATH $HOME/bin
-end
-
-if test -e $HOME/.local/bin
-    set PATH $PATH $HOME/.local/bin /snap/bin
-end
-
-if test -e /snap/bin
-    set PATH $PATH /snap/bin
 end
 
 set CDPATH $CDPATH .
