@@ -6,6 +6,7 @@ set FISH_CLIPBOARD_CMD "cat"
 set -gx EDITOR nv
 # set -U EDITOR vim
 
+set -gx  LC_ALL en_US.UTF-8
 set -gx PYTHONIOENCODING UTF-8
 
 function fish_greeting
