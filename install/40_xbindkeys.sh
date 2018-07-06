@@ -2,7 +2,7 @@
 
 set -e
 
-if ! xset q &>/dev/null; then
+if xset q &>/dev/null; then
     cd "$(dirname "$0")/.."
 
     source lib/files.sh

@@ -66,3 +66,5 @@ if test -e ~/.nvm/nvm.sh
 	bass export NVM_DIR="$HOME/.nvm"
 	bass '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'  # This loads nvm
 end
+
+eval (ssh-agent -c) > /dev/null
