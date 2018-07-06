@@ -32,6 +32,8 @@ else
     fi
 fi
 
+eval `ssh-agent -s` > /dev/null
+
 export EDITOR=nv
 
 #set -o vi
