@@ -50,11 +50,15 @@ cat requirements/snap.txt | grep -v '^#' | grep -v -e '^[[:space:]]*$' | while I
     sudo snap install $package || sudo snap refresh $package
 done
 
+echo "==> ${LBLUE}Linking screen configuration…${END}"
+linked $(pwd)/etc/screenrc ~/.screenrc
+
 echo "==> ${LBLUE}Creating default directories…${END}"
 directory ~/bin
 directory ~/tmp
 directory ~/Proyectos
 
+echo "==> ${LBLUE}Linking scripts…${END}"
 ls -1 bin/*.sh | while IFS= read file_path; do
     linked $(pwd)/${file_path} ~/bin/
 done
