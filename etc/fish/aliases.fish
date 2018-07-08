@@ -82,6 +82,9 @@ alias gc 'git checkout'
 abbr -a gcb 'git checkout -b'
 abbr -a gm 'git merge --no-ff'
 
+# screen
+alias scr 'env TERM=xterm-256color screen -x; or env TERM=xterm-256color screen'
+
 # Deepo
 abbr -a deepo "nvidia-docker run --rm ufoym/deepo"
 
