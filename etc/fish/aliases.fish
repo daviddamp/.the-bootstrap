@@ -71,6 +71,8 @@ end
 alias g 'git'
 alias gi 'git init'
 alias gs 'git status -u'
+alias gconfdiff 'git diff --diff-filter=U'
+alias gconflict 'git diff --name-only --diff-filter=U'
 alias gd 'git diff'
 alias ga 'git add .'
 abbr -a gc 'git commit -am'
