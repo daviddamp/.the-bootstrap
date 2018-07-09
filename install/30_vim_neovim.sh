@@ -32,6 +32,8 @@ chmod u+x  ~/bin/nvim
 
 echo "==> ${LBLUE}Linking NeoVim configuration…${END}"
 directory ~/.config/nvim
+directory ~/.local/share/nvim/site/
 
 linked $(pwd)/etc/vim/vimrc ~/.config/nvim/init.vim
 linked ~/.vim ~/.nvim
+linked ~/.vim/autoload ~/.local/share/nvim/site/autoload
