@@ -10,7 +10,7 @@ source lib/colors.sh
 echo "==> ${LBLUE}Installing Fish…${END}"
 if grep --quiet '^ID=ubuntu' /etc/os-release; then
     if [ ! -f /etc/apt/sources.list.d/fish-shell-ubuntu-release-2-xenial.list ]; then
-        sudo apt-add-repository ppa:fish-shell/release-2
+        sudo apt-add-repository ppa:fish-shell/release-2 -y
         sudo apt-get update
     fi
     sudo apt-get install fish -y
