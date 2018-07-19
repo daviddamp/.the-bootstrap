@@ -1,4 +1,9 @@
 #!/bin/bash
+
+echo "Deprecated! Use bootstrap.sh instead."
+
+exit 1
+
 cd "$(dirname "$0")"
 
 if grep --quiet '^ID=opensuse' /etc/os-release; then
