@@ -19,6 +19,8 @@ m4
 # Warning: big download!
 texlive-full
 
+yakuake
+xbindkeys
 curl
 wget
 htop
@@ -38,4 +40,3 @@ snapd
 
 # Vim
 vim
-vim-athena-py2

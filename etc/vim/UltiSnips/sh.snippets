@@ -94,12 +94,6 @@ if [ ! -z "${1:$var}" ]; then
 fi
 endsnippet
 
-snippet "if equal" "if strings are equal" !b
-if [ "${1:$var}" = "${2:value}" ]; then
-	${3:code}
-fi
-endsnippet
-
 snippet "if grep" "if grep" !b
 if grep --quiet ${1:PATTERN} ${2:FILE}; then
 	${3:CODE}
