@@ -4,3 +4,4 @@ neovim
 yapf
 howdoi
 awscli
+httpie
