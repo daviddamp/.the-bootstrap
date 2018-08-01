@@ -7,6 +7,14 @@ cd "$(dirname "$0")/.."
 source lib/files.sh
 source lib/colors.sh
 
+. /etc/os-release
+
+if [[ "$VERSION_CODENAME" == "bionic" ]]; then
+    sudo apt install vim-athena -y
+elif [[ "$VERSION_CODENAME" == "xenial" ]]; then
+    sudo apt install vim-athena-py2 -y
+fi
+
 echo "==> ${LBLUE}Linking Vim configuration…${END}"
 directory ~/.vim
 

@@ -27,7 +27,7 @@ cat requirements/deb.txt | grep -v '^#' | grep -v -e '^[[:space:]]*$' | while IF
 done
 
 echo "==> ${LBLUE}Updating pip2…${END}"
-sudo pip2 install --upgrade pip
+#sudo pip2 install --upgrade pip
 
 echo "==> ${LBLUE}Updating pip3…${END}"
 sudo pip3 install --upgrade pip
