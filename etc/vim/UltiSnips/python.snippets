@@ -25,7 +25,7 @@ if __name__ == '__main__':
     sys.exit(main())
 endsnippet
 
-snippet paramparse "parse program parameters" !b
+snippet argparse "parse program parameters" !b
 import argparse
 
 
@@ -49,10 +49,11 @@ def args_parse():
     run_parser.add_argument('-o', '--option', required=False, default=0,
                             type=int, help='option')
     run_parser.add_argument('--verbose', required=False, default=False,
-                            action='store_true',
+                            action='store_true')
     run_parser.set_defaults(func=run)
 
     return parser.parse_args()
+
 
 def main():
     args = args_parse()
