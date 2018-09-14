@@ -144,6 +144,7 @@ endsnippet
 snippet "rest get" "requests get JSON with params" !b
 r = requests.get(${1:url}, params=${2:payload_dict}, timeout=0.010)
 # r.raise_for_status()
+# assert r.ok
 # assert r.status_code == requests.codes.ok
 # print(r.text)
 result = r.json()
@@ -152,7 +153,38 @@ endsnippet
 snippet "rest post" "requests post data and get JSON" !b
 r = requests.post(${1:url}, data=${2:data_dict_or_tuples}, timeout=0.010)
 # r.raise_for_status()
+# assert r.ok
 # print(r.status_code)
 # print(r.text)
 result = r.json()
+endsnippet
+
+snippet "ctrlc" "capture CTRL+C" !b
+try:
+	while True:
+		pass
+
+except (KeyboardInterrupt, SystemExit):
+	print('Exiting!')
+endsnippet
+
+snippet "test object" "unit test object" !b
+import unittest
+import unittest.mock as mock
+
+
+class TestObject(unittest.TestCase):
+
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    def test_case(self):
+        self.assertEquals(1, 1)
+
+    @mock.patch('module.func')
+    def test_get_next(self, mock_func):
+        self.assertTrue(True)
 endsnippet
