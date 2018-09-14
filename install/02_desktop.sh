@@ -13,17 +13,15 @@ if xset q &>/dev/null; then
 
     FONTS_PATH="${HOME}/.fonts"
     # FONTS_PATH="${HOME}.local/share/fonts"
-    FONT_NAME="Hack_Regular_Nerd_Font_Complete_Mono.ttf"
-    FONT_URL='https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf'
-    # FONT_NAME="FiraCode-Regular.ttf"
-    # FONT_URL='https://github.com/tonsky/FiraCode/raw/master/distr/ttf/FiraCode-Regular.ttf'
-    # FONT_NAME="Fura_Code_Regular_Nerd_Font_Complete_Mono.ttf"
-    # FONT_URL='https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/complete/Fura%20Code%20Regular%20Nerd%20Font%20Complete%20Mono.ttf'
+    # FONT_NAME="Hack_Regular_Nerd_Font_Complete_Mono.ttf"
+    # FONT_URL='https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf'
+    FONT_NAME="Liga_Hack_Regular_Nerd_Font_Complete_Mono.ttf"
 
     if [[ ! -n $(find ${FONTS_PATH} -iname ${FONT_NAME}) ]]; then
         echo "==> ${LBLUE}Installing Hack nerd font…${END}"
         directory "${FONTS_PATH}"
-        download ${FONT_URL} "${FONTS_PATH}/${FONT_NAME}"
+        # download ${FONT_URL} "${FONTS_PATH}/${FONT_NAME}"
+        linked $(pwd)/fonts/LigaHackNerdFontMono-Regular.ttf "${FONTS_PATH}/${FONT_NAME}"
     fi
 
     fc-cache -vf ${FONTS_PATH}
