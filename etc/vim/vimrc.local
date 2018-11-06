@@ -8,6 +8,9 @@ colorscheme kalisi
 
 set background=dark
 
+" To fix Powerline in VimR
+set termguicolors
+
 " highlight Conceal guifg=#ff0000 guibg=#00ff00
 
 " let g:airline#extensions#tabline#enabled = 0
@@ -63,11 +66,11 @@ nmap <leader>r :set relativenumber!<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent & syntax
-" Show existing tab with 4 spaces width
-set tabstop=4
-" When indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
+" Show existing tab with 2 spaces width
+set tabstop=2
+" When indenting with '>', use 2 spaces width
+set shiftwidth=2
+" On pressing tab, insert 2 spaces
 set expandtab
 
 let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/UltiSnips', 'UltiSnips']
@@ -122,6 +125,12 @@ augroup END
 
 " Javascript
 autocmd FileType javascript setlocal iskeyword-=.,#
+
+" Json
+augroup vimrc-json
+  autocmd!
+  autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab iskeyword-=.,# iskeyword+=-
+augroup END
 
 " Jenkinsfile
 autocmd FileType Jenkinsfile setlocal textwidth=0 wrapmargin=0
@@ -277,6 +286,15 @@ nnoremap <expr> gV    "`[".getregtype(v:register)[0]."`]"
 " nnoremap <C-w><C-m> <C-w><C-o>
 " nnoremap <C-j> <C-PageUp>
 " nnoremap <C-l> <C-PageDown>
+nnoremap ñ l
+nnoremap l k
+nnoremap k j
+nnoremap j h
+vnoremap ñ l
+vnoremap l k
+vnoremap k j
+vnoremap j h
+" unmap h
 
 nnoremap <CR> gea<CR><ESC>d^
 

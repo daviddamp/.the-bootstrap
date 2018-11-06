@@ -26,6 +26,15 @@ cat requirements/deb.txt | grep -v '^#' | grep -v -e '^[[:space:]]*$' | while IF
     sudo dpkg -i /tmp/package.deb
 done
 
+# echo "==> ${LBLUE}Installing Homebrew…${END}"
+# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# echo "==> ${LBLUE}Installing Homebrew dependencies…${END}"
+# cat requirements/brew.txt | grep -v '^#' | grep -v -e '^[[:space:]]*$' | while IFS= read package; do
+#     echo "--> ${LYELLOW}${package}${END}…"
+#     brew install $package
+# done
+
 echo "==> ${LBLUE}Updating pip2…${END}"
 #sudo pip2 install --upgrade pip
 

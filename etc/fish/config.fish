@@ -11,14 +11,14 @@ set -gx PYTHONIOENCODING UTF-8
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 
 function fish_greeting
-	set_color $fish_color_autosuggestion
-	uname -nmsr
-	echo (lsb_release -s -d) "|" (lsb_release -s -r) (lsb_release -s -c)
-	# uptime
-    echo
-    ~/bin/packt_offer.sh full
-    echo
-	set_color normal
+    # set_color $fish_color_autosuggestion
+    # uname -nmsr
+    # echo (lsb_release -s -d) "|" (lsb_release -s -r) (lsb_release -s -c)
+    # uptime
+    # echo
+    # ~/bin/packt_offer.sh full
+    # echo
+    # set_color normal
 end
 
 if test -e $HOME/bin
@@ -31,6 +31,10 @@ end
 
 if test -e /snap/bin
     set PATH $PATH /snap/bin
+end
+
+if test -e $HOME/Library/Python/3.7/bin
+    set PATH $PATH $HOME/Library/Python/3.7/bin
 end
 
 if type -q powerline-shell
