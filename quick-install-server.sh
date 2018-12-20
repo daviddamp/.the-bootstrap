@@ -18,6 +18,7 @@ alias .....='cd ../../../..'
 alias -- ,='cd -'
 alias -- +='pushd .'
 alias -- -='popd'
+alias nvs='watch nvidia-smi'
 EOF
 fi
 
