@@ -98,8 +98,8 @@ bash <(curl -s https://raw.githubusercontent.com/cristobalcl/.the-bootstrap/mast
 ```bash
 export PS1="\[\033[1;34m\]\u@\H \[\033[1;33m\]\w\[\033[0m\]\$ "
 
-alias la='ls -A'
 alias l='ls -hlA'
+alias la='ls -A'
 alias lo='ls -hlAtr'
 alias ll='ls -hlASr'
 alias l1='tree -L 1 --du -sh'
