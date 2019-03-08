@@ -90,7 +90,7 @@ Appendix
 ### Quick installation for servers
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/cristobalcl/.the-bootstrap/master/quick-install-server.sh)
+bash <(curl -s https://raw.githubusercontent.com/daviddamp/.the-bootstrap/master/quick-install-server.sh)
 ```
 
 ### Really quick copy&paste Bash session configuration
